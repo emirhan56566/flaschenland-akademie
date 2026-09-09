@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Login – Flaschenland Akademie</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f4f6f8;
+      color: #17202a;
+      padding: 20px;
+    }
+
+    .login-container {
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo h1 {
+      margin: 0;
+      color: #14213d;
+      font-size: 28px;
+    }
+
+    .logo p {
+      margin: 7px 0 0;
+      color: #65758b;
+      font-size: 14px;
+    }
+
+    .login-box {
+      background: white;
+      border-radius: 20px;
+      padding: 28px 22px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .login-box h2 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 23px;
+    }
+
+    .login-description {
+      color: #65758b;
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 7px;
+    }
+
+    input {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid #d7dce1;
+      border-radius: 10px;
+      font-size: 16px;
+      outline: none;
+      margin-bottom: 17px;
+      background: white;
+    }
+
+    input:focus {
+      border-color: #14213d;
+    }
+
+    .login-button {
+      width: 100%;
+      border: none;
+      background: #14213d;
+      color: white;
+      padding: 14px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .login-button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .message {
+      display: none;
+      padding: 12px;
+      border-radius: 10px;
+      margin-bottom: 18px;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .message.error {
+      display: block;
+      background: #fde8e8;
+      color: #9b1c1c;
+    }
+
+    .message.success {
+      display: block;
+      background: #def7ec;
+      color: #03543f;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 18px;
+      color: #7a8490;
+      font-size: 13px;
+    }
+
+    .password-wrapper {
+      position: relative;
+    }
+
+    .password-wrapper input {
+      padding-right: 55px;
+    }
+
+    .show-password {
+      position: absolute;
+      right: 10px;
+      top: 9px;
+      border: none;
+      background: transparent;
+      padding: 8px;
+      color: #65758b;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 500px) {
+      body {
+        align-items: flex-start;
+        padding-top: 45px;
+      }
+
+      .login-box {
+        padding: 24px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="login-container">
+
+    <div class="logo">
+      <h1>Flaschenland Akademie</h1>
+      <p>Digitale Vorarbeiter-Schulung</p>
+    </div>
+
+    <div class="login-box">
+
+      <h2>Anmelden</h2>
+
+      <p class="login-description">
+        Bitte melde dich mit deinem Benutzernamen
+        und Passwort an.
+      </p>
+
+      <div
+        id="message"
+        class="message">
+      </div>
+
+      <form id="loginForm">
+
+        <label for="username">
+          Benutzername
+        </label>
+
+        <input
+          type="text"
+          id="username"
+          placeholder="Benutzername"
+          autocomplete="username"
+          required
+        >
+
+        <label for="password">
+          Passwort
+        </label>
+
+        <div class="password-wrapper">
+
+          <input
+            type="password"
+            id="password"
+            placeholder="Passwort"
+            autocomplete="current-password"
+            required
+          >
+
+          <button
+            type="button"
+            class="show-password"
+            id="showPassword">
+            Anzeigen
+          </button>
+
+        </div>
+
+        <button
+          type="submit"
+          class="login-button"
+          id="loginButton">
+          Anmelden
+        </button>
+
+      </form>
+
+    </div>
+
+    <div class="footer">
+      Flaschenland Akademie · Interne Weiterbildung
+    </div>
+
+  </div>
+
+
+  <!-- SUPABASE -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+  <script>
+
+    /* ==========================================
+       SUPABASE VERBINDUNG
+       ========================================== */
+
+    const SUPABASE_URL =
+      "https://crfdjcacsflrtqcmswnb.supabase.co";
+
+    const SUPABASE_KEY =
+      "HIER_DEIN_PUBLISHABLE_KEY_EINSETZEN";
+
+
+    const { createClient } =
+      supabase;
+
+
+    const supabaseClient =
+      createClient(
+        SUPABASE_URL,
+        SUPABASE_KEY
+      );
+
+
+    /* ==========================================
+       ELEMENTE
+       ========================================== */
+
+    const loginForm =
+      document.getElementById("loginForm");
+
+    const usernameInput =
+      document.getElementById("username");
+
+    const passwordInput =
+      document.getElementById("password");
+
+    const loginButton =
+      document.getElementById("loginButton");
+
+    const message =
+      document.getElementById("message");
+
+    const showPassword =
+      document.getElementById("showPassword");
+
+
+    /* ==========================================
+       PASSWORT ANZEIGEN
+       ========================================== */
+
+    showPassword.addEventListener(
+      "click",
+      function() {
+
+        if (
+          passwordInput.type === "password"
+        ) {
+
+          passwordInput.type = "text";
+
+          showPassword.textContent =
+            "Verbergen";
+
+        } else {
+
+          passwordInput.type = "password";
+
+          showPassword.textContent =
+            "Anzeigen";
+
+        }
+
+      }
+    );
+
+
+    /* ==========================================
+       MELDUNG
+       ========================================== */
+
+    function showMessage(
+      text,
+      type
+    ) {
+
+      message.textContent = text;
+
+      message.className =
+        "message " + type;
+
+    }
+
+
+    /* ==========================================
+       LOGIN
+       ========================================== */
+
+    loginForm.addEventListener(
+      "submit",
+      async function(event) {
+
+        event.preventDefault();
+
+
+        const username =
+          usernameInput.value
+            .trim()
+            .toLowerCase();
+
+        const password =
+          passwordInput.value;
+
+
+        if (!username || !password) {
+
+          showMessage(
+            "Bitte Benutzername und Passwort eingeben.",
+            "error"
+          );
+
+          return;
+
+        }
+
+
+        loginButton.disabled = true;
+
+        loginButton.textContent =
+          "Anmeldung läuft...";
+
+
+        try {
+
+          /*
+            Der Mitarbeiter gibt nur seinen
+            Benutzernamen ein.
+
+            Intern wird daraus die technische
+            Supabase-Adresse.
+          */
+
+          const authEmail =
+            username +
+            "@flaschenland-akademie.local";
+
+
+          const {
+            data,
+            error
+          } =
+            await supabaseClient.auth.signInWithPassword({
+
+              email: authEmail,
+
+              password: password
+
+            });
+
+
+          if (error) {
+
+            console.error(error);
+
+            showMessage(
+              "Benutzername oder Passwort ist falsch.",
+              "error"
+            );
+
+            loginButton.disabled = false;
+
+            loginButton.textContent =
+              "Anmelden";
+
+            return;
+
+          }
+
+
+          if (!data.user) {
+
+            showMessage(
+              "Anmeldung konnte nicht abgeschlossen werden.",
+              "error"
+            );
+
+            loginButton.disabled = false;
+
+            loginButton.textContent =
+              "Anmelden";
+
+            return;
+
+          }
+
+
+          /*
+            Prüfen, ob das Mitarbeiterprofil
+            vorhanden und aktiv ist.
+          */
+
+          const {
+            data: profile,
+            error: profileError
+          } =
+            await supabaseClient
+              .from("profiles")
+              .select(
+                "id, username, full_name, role, active"
+              )
+              .eq("id", data.user.id)
+              .single();
+
+
+          if (profileError || !profile) {
+
+            await supabaseClient.auth.signOut();
+
+            showMessage(
+              "Für diesen Benutzer wurde kein Profil gefunden.",
+              "error"
+            );
+
+            loginButton.disabled = false;
+
+            loginButton.textContent =
+              "Anmelden";
+
+            return;
+
+          }
+
+
+          if (!profile.active) {
+
+            await supabaseClient.auth.signOut();
+
+            showMessage(
+              "Dieser Benutzer ist derzeit deaktiviert.",
+              "error"
+            );
+
+            loginButton.disabled = false;
+
+            loginButton.textContent =
+              "Anmelden";
+
+            return;
+
+          }
+
+
+          /*
+            Erfolgreich angemeldet.
+          */
+
+          showMessage(
+            "Anmeldung erfolgreich. Weiterleitung...",
+            "success"
+          );
+
+
+          /*
+            Admin geht später in den Admin-Bereich.
+            Mitarbeiter gehen zur Akademie.
+          */
+
+          if (profile.role === "admin") {
+
+            window.location.href =
+              "admin.html";
+
+          } else {
+
+            window.location.href =
+              "index.html";
+
+          }
+
+        }
+
+        catch (error) {
+
+          console.error(error);
+
+          showMessage(
+            "Es ist ein unerwarteter Fehler aufgetreten.",
+            "error"
+          );
+
+          loginButton.disabled = false;
+
+          loginButton.textContent =
+            "Anmelden";
+
+        }
+
+      }
+    );
+
+  </script>
+
+</body>
+</html>
