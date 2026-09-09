@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flaschenland Akademie – Tag 3</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f6f8;
+    color: #222;
+}
+
+header {
+    background: #17365d;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+.progress-box {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.progress {
+    height: 15px;
+    background: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #2e75b6;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 18px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+h1, h2 {
+    margin-top: 0;
+}
+
+button {
+    background: #17365d;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.answer {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: #eef2f5;
+    color: #222;
+    margin: 8px 0;
+}
+
+.answer.correct {
+    background: #b7e1cd;
+}
+
+.answer.wrong {
+    background: #f4cccc;
+}
+
+#exam {
+    display: none;
+}
+
+.question {
+    margin-bottom: 25px;
+}
+
+.result {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Flaschenland Akademie</h1>
+    <p>Tag 3 – Konflikte & Zusammenarbeit</p>
+</header>
+
+<div class="container">
+
+<div class="progress-box">
+    <strong>Fortschritt Tag 3</strong>
+    <div class="progress">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <p id="progressText">0 % abgeschlossen</p>
+</div>
+
+<div class="card">
+<h2>Willkommen zu Tag 3</h2>
+<p>
+Heute geht es um Konflikte, schwierige Situationen und die Zusammenarbeit
+zwischen Vorarbeitern und Mitarbeitern.
+</p>
+<p>
+Eine Führungskraft muss Konflikte früh erkennen, ruhig bleiben,
+klar kommunizieren und professionell handeln.
+</p>
+</div>
+
+<!-- MODUL 1 -->
+
+<div class="card module">
+<h2>1. Was ist überhaupt ein Konflikt?</h2>
+
+<p>
+Ein Konflikt entsteht, wenn unterschiedliche Interessen, Erwartungen,
+Meinungen oder Verhaltensweisen aufeinandertreffen.
+</p>
+
+<p>
+Nicht jeder Konflikt ist sofort ein großes Problem. Entscheidend ist,
+wie früh er erkannt und wie professionell damit umgegangen wird.
+</p>
+
+<button onclick="showQuiz(this, 0)">
+Mini-Quiz starten
+</button>
+
+<div class="quiz" style="display:none;">
+<p><strong>Was ist bei einem Konflikt besonders wichtig?</strong></p>
+
+<button class="answer" onclick="answer(this,true)">
+Früh erkennen und sachlich ansprechen
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Ignorieren, bis er von alleine verschwindet
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Sofort laut werden
+</button>
+</div>
+</div>
+
+
+<!-- MODUL 2 -->
+
+<div class="card module">
+<h2>2. Konflikte früh erkennen</h2>
+
+<p>
+Warnzeichen können eine angespannte Stimmung, kurze oder aggressive
+Antworten, Rückzug, Beschwerden oder wiederkehrende Missverständnisse sein.
+</p>
+
+<p>
+Je früher ein Konflikt erkannt wird, desto leichter lässt er sich lösen.
+</p>
+
+<button onclick="showQuiz(this, 1)">
+Mini-Quiz starten
+</button>
+
+<div class="quiz" style="display:none;">
+<p><strong>Was sollte eine Führungskraft bei ersten Anzeichen tun?</strong></p>
+
+<button class="answer" onclick="answer(this,true)">
+Situation beobachten und frühzeitig ansprechen
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Sofort einen Schuldigen bestimmen
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Den Konflikt bewusst verschärfen
+</button>
+</div>
+</div>
+
+
+<!-- MODUL 3 -->
+
+<div class="card module">
+<h2>3. Ruhe bewahren</h2>
+
+<p>
+Eine Führungskraft darf sich nicht von der Stimmung anderer anstecken lassen.
+Auch bei Provokationen bleibt sie ruhig und sachlich.
+</p>
+
+<p>
+Lautstärke ist kein Zeichen von Führungskompetenz.
+Souveränität bedeutet, auch unter Druck kontrolliert zu bleiben.
+</p>
+
+<button onclick="showQuiz(this, 2)">
+Mini-Quiz starten
+</button>
+
+<div class="quiz" style="display:none;">
+<p><strong>Wie sollte ein Vorarbeiter bei einer Provokation reagieren?</strong></p>
+
+<button class="answer" onclick="answer(this,true)">
+Ruhig und sachlich bleiben
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Noch lauter werden
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Den Mitarbeiter vor allen anderen bloßstellen
+</button>
+</div>
+</div>
+
+
+<!-- MODUL 4 -->
+
+<div class="card module">
+<h2>4. Beleidigungen und Respektlosigkeit</h2>
+
+<p>
+Beleidigungen, persönliche Angriffe, Anschreien, Drohungen oder
+Demütigungen gehören nicht zu professioneller Führung.
+</p>
+
+<p>
+Auch wenn ein Mitarbeiter sich falsch verhält, bleibt die Führungskraft
+sachlich und setzt klare Grenzen.
+</p>
+
+<button onclick="showQuiz(this, 3)">
+Mini-Quiz starten
+</button>
+
+<div class="quiz" style="display:none;">
+<p><strong>Was ist bei einer Beleidigung richtig?</strong></p>
+
+<button class="answer" onclick="answer(this,true)">
+Klare Grenze setzen und sachlich reagieren
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Zurückbeleidigen
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Vor allen Kollegen lächerlich machen
+</button>
+</div>
+</div>
+
+
+<!-- MODUL 5 -->
+
+<div class="card module">
+<h2>5. Konfliktgespräch führen</h2>
+
+<p>
+Ein gutes Konfliktgespräch beginnt mit konkreten Beobachtungen.
+Es wird erklärt, was passiert ist, welche Auswirkung es hatte und
+welches Verhalten künftig erwartet wird.
+</p>
+
+<p>
+Nicht: „Du bist immer schwierig.“
+</p>
+
+<p>
+Besser: „Heute wurde die Anweisung mehrfach unterbrochen. Dadurch konnte
+die Arbeit nicht sauber verteilt werden.“
+</p>
+
+<button onclick="showQuiz(this, 4)">
+Mini-Quiz starten
+</button>
+
+<div class="quiz" style="display:none;">
+<p><strong>Worauf sollte sich ein Konfliktgespräch konzentrieren?</strong></p>
+
+<button class="answer" onclick="answer(this,true)">
+Auf konkrete Situationen und Verhalten
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Auf persönliche Beleidigungen
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Auf Gerüchte über den Mitarbeiter
+</button>
+</div>
+</div>
+
+
+<!-- MODUL 6 -->
+
+<div class="card module">
+<h2>6. Fakten statt Gerüchte</h2>
+
+<p>
+Führungskräfte treffen Entscheidungen auf Grundlage von beobachtbaren
+Tatsachen und nachvollziehbaren Informationen.
+</p>
+
+<p>
+Gerüchte dürfen nicht einfach als Wahrheit behandelt werden.
+</p>
+
+<button onclick="showQuiz(this, 5)">
+Mini-Quiz starten
+</button>
+
+<div class="quiz" style="display:none;">
+<p><strong>Was ist eine gute Grundlage für eine Entscheidung?</strong></p>
+
+<button class="answer" onclick="answer(this,true)">
+Beobachtbare Fakten und dokumentierte Vorgänge
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Gerüchte aus der Belegschaft
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Vermutungen
+</button>
+</div>
+</div>
+
+
+<!-- MODUL 7 -->
+
+<div class="card module">
+<h2>7. Konflikte zwischen Vorarbeitern</h2>
+
+<p>
+Auch zwischen Vorarbeitern können unterschiedliche Meinungen entstehen.
+Diese Konflikte dürfen nicht auf dem Rücken der Mitarbeiter ausgetragen werden.
+</p>
+
+<p>
+Unstimmigkeiten werden unter vier Augen oder über den vorgesehenen
+Führungsweg geklärt.
+</p>
+
+<button onclick="showQuiz(this, 6)">
+Mini-Quiz starten
+</button>
+
+<div class="quiz" style="display:none;">
+<p><strong>Was ist bei einem Konflikt zwischen Vorarbeitern falsch?</strong></p>
+
+<button class="answer" onclick="answer(this,false)">
+Das Gespräch unter vier Augen suchen
+</button>
+
+<button class="answer" onclick="answer(this,true)">
+Den Kollegen vor den Mitarbeitern schlechtmachen
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Bei Bedarf eine Führungskraft einbeziehen
+</button>
+</div>
+</div>
+
+
+<!-- MODUL 8 -->
+
+<div class="card module">
+<h2>8. Keine Machtkämpfe</h2>
+
+<p>
+Führung bedeutet nicht, ständig zu beweisen, wer mehr Macht hat.
+Entscheidend ist, dass der Arbeitsbereich funktioniert.
+</p>
+
+<p>
+Persönliche Egos, Machtspiele und Konkurrenz unter Führungskräften
+schaden dem gesamten Team.
+</p>
+
+<button onclick="showQuiz(this, 7)">
+Mini-Quiz starten
+</button>
+
+<div class="quiz" style="display:none;">
+<p><strong>Was sollte im Vordergrund stehen?</strong></p>
+
+<button class="answer" onclick="answer(this,true)">
+Der gemeinsame Arbeitserfolg
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Wer sich durchsetzt
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Wer am lautesten ist
+</button>
+</div>
+</div>
+
+
+<!-- MODUL 9 -->
+
+<div class="card module">
+<h2>9. Schwierige Mitarbeiter nicht persönlich nehmen</h2>
+
+<p>
+Manche Mitarbeiter reagieren gereizt, kritisch oder unkooperativ.
+Eine Führungskraft darf daraus keinen persönlichen Kampf machen.
+</p>
+
+<p>
+Das Verhalten wird sachlich angesprochen und anhand klarer Erwartungen
+geführt.
+</p>
+
+<button onclick="showQuiz(this, 8)">
+Mini-Quiz starten
+</button>
+
+<div class="quiz" style="display:none;">
+<p><strong>Wie sollte man mit einem schwierigen Mitarbeiter umgehen?</strong></p>
+
+<button class="answer" onclick="answer(this,true)">
+Sachlich, konsequent und professionell
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Persönlich zurückschlagen
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Ihn absichtlich schlechter behandeln
+</button>
+</div>
+</div>
+
+
+<!-- MODUL 10 -->
+
+<div class="card module">
+<h2>10. Wenn eine Situation eskaliert</h2>
+
+<p>
+Wenn ein Konflikt eskaliert, muss die Führungskraft Sicherheit und Ordnung
+herstellen.
+</p>
+
+<p>
+Bei Drohungen, massiven Beleidigungen oder körperlicher Eskalation wird
+nicht weiter gestritten. Die Situation wird gestoppt und über den
+vorgesehenen Führungsweg eskaliert.
+</p>
+
+<button onclick="showQuiz(this, 9)">
+Mini-Quiz starten
+</button>
+
+<div class="quiz" style="display:none;">
+<p><strong>Was ist bei einer Eskalation wichtig?</strong></p>
+
+<button class="answer" onclick="answer(this,true)">
+Situation stoppen und geeignete Führungsebene einbeziehen
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Weiter diskutieren und provozieren
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Den Konflikt körperlich lösen
+</button>
+</div>
+</div>
+
+
+<!-- MODUL 11 -->
+
+<div class="card module">
+<h2>11. Konflikte dokumentieren</h2>
+
+<p>
+Wichtige Vorfälle sollten sachlich dokumentiert werden.
+Dazu gehören beispielsweise Datum, Situation, beteiligte Personen,
+konkretes Verhalten und getroffene Maßnahmen.
+</p>
+
+<p>
+Dokumentation schützt nicht nur die Führungskraft, sondern schafft
+Nachvollziehbarkeit.
+</p>
+
+<button onclick="showQuiz(this, 10)">
+Mini-Quiz starten
+</button>
+
+<div class="quiz" style="display:none;">
+<p><strong>Wie sollte ein Vorfall dokumentiert werden?</strong></p>
+
+<button class="answer" onclick="answer(this,true)">
+Sachlich und nachvollziehbar
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Mit persönlichen Beleidigungen
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Nur aus dem Gedächtnis und möglichst ungenau
+</button>
+</div>
+</div>
+
+
+<!-- MODUL 12 -->
+
+<div class="card module">
+<h2>12. Zusammenarbeit im Führungsteam</h2>
+
+<p>
+Vorarbeiter sind Teil eines Führungsteams.
+Unterschiedliche Meinungen sind möglich und sogar normal.
+</p>
+
+<p>
+Entscheidend ist, dass die Führungskräfte nach außen geschlossen,
+respektvoll und professionell auftreten.
+</p>
+
+<p>
+Probleme werden intern geklärt. Mitarbeiter werden nicht in
+Führungskonflikte hineingezogen.
+</p>
+
+<button onclick="showQuiz(this, 11)">
+Mini-Quiz starten
+</button>
+
+<div class="quiz" style="display:none;">
+<p><strong>Wie sollte ein Führungsteam auftreten?</strong></p>
+
+<button class="answer" onclick="answer(this,true)">
+Respektvoll, abgestimmt und professionell
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Jeder gegen jeden
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Konflikte vor den Mitarbeitern austragen
+</button>
+</div>
+</div>
+
+
+<div class="card">
+<h2>Zusammenfassung Tag 3</h2>
+
+<p>
+Professionelle Führung bedeutet nicht, jeden Konflikt zu gewinnen.
+Professionelle Führung bedeutet, Konflikte kontrolliert zu bearbeiten.
+</p>
+
+<ul>
+<li>ruhig bleiben</li>
+<li>respektvoll kommunizieren</li>
+<li>klare Grenzen setzen</li>
+<li>Fakten statt Gerüchte verwenden</li>
+<li>Konflikte nicht vor Mitarbeitern austragen</li>
+<li>Beleidigungen und Drohungen nicht akzeptieren</li>
+<li>Vorfälle sachlich dokumentieren</li>
+<li>bei Bedarf über den richtigen Führungsweg eskalieren</li>
+</ul>
+
+<button onclick="startExam()">
+Tag-3-Test starten
+</button>
+</div>
+
+
+<!-- PRÜFUNG -->
+
+<div id="exam" class="card">
+
+<h2>Tag-3-Test</h2>
+
+<p>
+Beantworte alle 30 Fragen. Zum Bestehen benötigst du mindestens
+<strong>80 %</strong>.
+</p>
+
+<div id="questions"></div>
+
+<button onclick="finishExam()">
+Test auswerten
+</button>
+
+<div id="result" class="result"></div>
+
+</div>
+
+</div>
+
+
+<script>
+
+let completedModules = new Set();
+
+function showQuiz(button, moduleNumber) {
+
+    const quiz = button.nextElementSibling;
+
+    quiz.style.display = "block";
+
+    button.style.display = "none";
+}
+
+function answer(button, correct) {
+
+    const answers = button.parentElement.querySelectorAll(".answer");
+
+    answers.forEach(function(a) {
+        a.disabled = true;
+    });
+
+    if (correct) {
+        button.classList.add("correct");
+    } else {
+        button.classList.add("wrong");
+
+        answers.forEach(function(a) {
+            if (a.getAttribute("onclick") &&
+                a.getAttribute("onclick").includes("true")) {
+                a.classList.add("correct");
+            }
+        });
+    }
+
+    updateProgress();
+}
+
+function updateProgress() {
+
+    const quizzes = document.querySelectorAll(".quiz");
+
+    let completed = 0;
+
+    quizzes.forEach(function(quiz) {
+        const buttons = quiz.querySelectorAll(".answer");
+
+        let finished = false;
+
+        buttons.forEach(function(button) {
+            if (button.disabled) {
+                finished = true;
+            }
+        });
+
+        if (finished) {
+            completed++;
+        }
+    });
+
+    const percent = Math.round((completed / quizzes.length) * 100);
+
+    document.getElementById("progressBar").style.width = percent + "%";
+
+    document.getElementById("progressText").innerText =
+        percent + " % abgeschlossen";
+}
+
+
+const examQuestions = [
+
+["Was ist bei einem Konflikt besonders wichtig?",
+["Konflikt früh erkennen und sachlich ansprechen","Konflikt ignorieren","Laut werden","Schuldigen suchen"]],
+
+["Was ist ein typisches Warnzeichen für einen Konflikt?",
+["Angespannte Stimmung","Immer gute Stimmung","Hohe Produktivität","Ordentliche Arbeitsplätze"]],
+
+["Wie sollte eine Führungskraft bei einer Provokation reagieren?",
+["Ruhig bleiben","Zurückschreien","Beleidigen","Drohungen aussprechen"]],
+
+["Was gehört nicht zu professioneller Führung?",
+["Beleidigungen","Klare Kommunikation","Respekt","Sachliche Kritik"]],
+
+["Worauf sollte ein Konfliktgespräch basieren?",
+["Konkrete Beobachtungen","Gerüchte","Persönliche Angriffe","Vermutungen"]],
+
+["Was ist eine gute Entscheidungsgrundlage?",
+["Fakten","Gerüchte","Hörensagen","Vermutungen"]],
+
+["Wo sollte ein Konflikt zwischen Vorarbeitern geklärt werden?",
+["Intern und professionell","Vor allen Mitarbeitern","In der Pause vor allen","Durch Anschreien"]],
+
+["Was sollte bei Führungskräften nicht im Vordergrund stehen?",
+["Machtkampf","Arbeitserfolg","Zusammenarbeit","Qualität"]],
+
+["Wie geht man mit einem schwierigen Mitarbeiter um?",
+["Sachlich und konsequent","Persönlich angreifen","Ignorieren","Absichtlich benachteiligen"]],
+
+["Was ist bei einer Eskalation wichtig?",
+["Situation stoppen und eskalieren","Weiter provozieren","Körperlich reagieren","Lauter werden"]],
+
+["Warum ist Dokumentation wichtig?",
+["Nachvollziehbarkeit","Um Mitarbeiter bloßzustellen","Um Gerüchte aufzuschreiben","Um Streit zu verschärfen"]],
+
+["Wie sollte ein Führungsteam auftreten?",
+["Professionell und respektvoll","Gegeneinander","Unkoordiniert","Aggressiv"]],
+
+["Was ist ein guter Umgangston?",
+["Respektvoll","Beleidigend","Aggressiv","Herablassend"]],
+
+["Was sollte eine Führungskraft bei Kritik vermeiden?",
+["Persönliche Angriffe","Sachliche Argumente","Konkrete Beispiele","Ruhige Sprache"]],
+
+["Was bedeutet Souveränität?",
+["Auch unter Druck ruhig bleiben","Immer gewinnen","Laut sprechen","Andere einschüchtern"]],
+
+["Was ist bei Gerüchten richtig?",
+["Nicht als Fakten behandeln","Sofort weitergeben","Als Wahrheit verwenden","Mitarbeiter damit konfrontieren"]],
+
+["Was sollte man bei einem Konflikt zuerst betrachten?",
+["Die konkrete Situation","Die Nationalität","Persönliche Vorurteile","Private Probleme"]],
+
+["Was darf ein Mitarbeiter bei einer Auseinandersetzung nicht erwarten?",
+["Beleidigungen durch den Vorarbeiter","Respekt","Klare Regeln","Sachliche Kommunikation"]],
+
+["Was ist bei Meinungsverschiedenheiten zwischen Vorarbeitern wichtig?",
+["Sachlich klären","Mitarbeiter aufhetzen","Öffentlich streiten","Kollegen schlechtmachen"]],
+
+["Was ist keine gute Führung?",
+["Einschüchterung","Klarheit","Verantwortung","Respekt"]],
+
+["Was sollte bei einem Konflikt dokumentiert werden?",
+["Konkrete Fakten","Beleidigungen über Personen","Gerüchte","Vermutungen"]],
+
+["Wann sollte eine höhere Führungsebene einbezogen werden?",
+["Wenn der Konflikt nicht selbst gelöst werden kann","Bei jeder Kleinigkeit","Nie","Nur bei Gerüchten"]],
+
+["Was ist bei Drohungen wichtig?",
+["Situation ernst nehmen und eskalieren","Zurückdrohen","Ignorieren","Lachen"]],
+
+["Was sollte eine Führungskraft vermeiden?",
+["Öffentliche Demütigung","Klare Ansagen","Feedback","Kontrolle"]],
+
+["Was hilft bei schwierigen Gesprächen?",
+["Vorbereitung","Wut","Lautstärke","Drohungen"]],
+
+["Was ist bei Kritik sinnvoll?",
+["Verhalten konkret beschreiben","Person beleidigen","Charakter angreifen","Gerüchte nennen"]],
+
+["Was ist das Ziel eines Konfliktgesprächs?",
+["Eine professionelle Lösung","Einen Sieger bestimmen","Den Mitarbeiter fertig machen","Macht demonstrieren"]],
+
+["Was schadet der Zusammenarbeit im Führungsteam?",
+["Machtkämpfe","Abstimmung","Respekt","Unterstützung"]],
+
+["Was sollte eine Führungskraft bei Fehlern tun?",
+["Sachlich analysieren und korrigieren","Sofort beleidigen","Schreien","Gerüchte verbreiten"]],
+
+["Was ist ein Grundsatz professioneller Führung?",
+["Klarheit und Respekt","Angst und Druck","Beleidigung und Drohung","Macht und Einschüchterung"]]
+
+];
+
+
+function startExam() {
+
+    document.getElementById("exam").style.display = "block";
+
+    const container = document.getElementById("questions");
+
+    container.innerHTML = "";
+
+    examQuestions.forEach(function(question, index) {
+
+        const div = document.createElement("div");
+
+        div.className = "question";
+
+        const title = document.createElement("p");
+
+        title.innerHTML =
+            "<strong>" + (index + 1) + ". " +
+            question[0] + "</strong>";
+
+        div.appendChild(title);
+
+        question[1].forEach(function(answerText, answerIndex) {
+
+            const button = document.createElement("button");
+
+            button.className = "answer";
+
+            button.innerText = answerText;
+
+            button.onclick = function() {
+
+                const all =
+                    div.querySelectorAll(".answer");
+
+                all.forEach(function(a) {
+                    a.disabled = true;
+                });
+
+                button.dataset.selected = answerIndex;
+                button.classList.add("correct");
+
+            };
+
+            div.appendChild(button);
+        });
+
+        container.appendChild(div);
+    });
+
+    document.getElementById("exam").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+
+function finishExam() {
+
+    const questionDivs =
+        document.querySelectorAll(".question");
+
+    let correctAnswers = 0;
+    let answered = 0;
+
+    questionDivs.forEach(function(div, questionIndex) {
+
+        const answers =
+            div.querySelectorAll(".answer");
+
+        let selected = null;
+
+        answers.forEach(function(button, answerIndex) {
+
+            if (button.dataset.selected !== undefined) {
+                selected = answerIndex;
+            }
+        });
+
+        if (selected !== null) {
+
+            answered++;
+
+            if (selected === 0) {
+                correctAnswers++;
+            }
+
+        }
+    });
+
+    if (answered < examQuestions.length) {
+
+        document.getElementById("result").innerText =
+            "Bitte beantworte alle 30 Fragen.";
+
+        return;
+    }
+
+    const percent =
+        Math.round((correctAnswers / examQuestions.length) * 100);
+
+    if (percent >= 80) {
+
+        document.getElementById("result").innerText =
+            "BESTANDEN! " +
+            correctAnswers +
+            " von " +
+            examQuestions.length +
+            " richtig (" +
+            percent +
+            " %).";
+
+    } else {
+
+        document.getElementById("result").innerText =
+            "NICHT BESTANDEN. " +
+            correctAnswers +
+            " von " +
+            examQuestions.length +
+            " richtig (" +
+            percent +
+            " %). Mindestens 80 % werden benötigt.";
+    }
+}
+
+</script>
+
+</body>
+</html>
