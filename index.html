@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Flaschenland Akademie</title>
 
   <style>
@@ -20,7 +21,12 @@
     header {
       background: #14213d;
       color: white;
-      padding: 24px 20px;
+      padding: 26px 20px;
+    }
+
+    header .header-inner {
+      max-width: 900px;
+      margin: auto;
     }
 
     header h1 {
@@ -31,13 +37,16 @@
     header p {
       margin: 8px 0 0;
       opacity: 0.85;
+      font-size: 15px;
     }
 
     main {
       max-width: 900px;
       margin: auto;
-      padding: 24px 16px 50px;
+      padding: 22px 16px 50px;
     }
+
+    /* WILLKOMMEN */
 
     .welcome {
       background: white;
@@ -49,7 +58,74 @@
 
     .welcome h2 {
       margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 24px;
     }
+
+    .welcome p {
+      line-height: 1.55;
+      color: #59636e;
+    }
+
+    /* FORTSCHRITT */
+
+    .progress-section {
+      margin-top: 22px;
+    }
+
+    .progress-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 9px;
+      font-size: 14px;
+    }
+
+    .progress-percent {
+      font-weight: bold;
+      color: #14213d;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 12px;
+      background: #e1e5e9;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      width: 0%;
+      height: 100%;
+      background: #2a9d8f;
+      border-radius: 20px;
+      transition: width 0.4s ease;
+    }
+
+    .progress-text {
+      margin: 9px 0 0;
+      font-size: 14px;
+      color: #65758b;
+    }
+
+    /* ÜBERSCHRIFT MODULE */
+
+    .section-title {
+      margin: 28px 0 14px;
+    }
+
+    .section-title h2 {
+      margin: 0;
+      font-size: 21px;
+    }
+
+    .section-title p {
+      margin: 6px 0 0;
+      color: #6b7480;
+      font-size: 14px;
+    }
+
+    /* MODULE */
 
     .modules {
       display: grid;
@@ -58,75 +134,196 @@
 
     .module {
       background: white;
-      border-radius: 16px;
+      border-radius: 18px;
       padding: 20px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+      position: relative;
     }
 
     .module-number {
-      font-size: 13px;
+      font-size: 12px;
       font-weight: bold;
       color: #65758b;
       text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     .module h3 {
-      margin: 8px 0;
+      margin: 7px 0 8px;
       font-size: 20px;
     }
 
     .module p {
       color: #59636e;
       line-height: 1.5;
+      margin-bottom: 14px;
     }
+
+    /* STATUS */
+
+    .status {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .status.not-started {
+      background: #eef1f4;
+      color: #687381;
+    }
+
+    .status.started {
+      background: #fff3cd;
+      color: #856404;
+    }
+
+    .status.completed {
+      background: #d8f3e8;
+      color: #176b50;
+    }
+
+    /* BUTTON */
 
     .button {
       display: inline-block;
       background: #14213d;
       color: white;
-      padding: 11px 18px;
+      padding: 12px 18px;
       border-radius: 10px;
       text-decoration: none;
       font-weight: 600;
-      margin-top: 8px;
+      font-size: 15px;
+      margin-top: 4px;
+      transition: 0.2s;
     }
 
-    .progress {
-      margin-top: 18px;
+    .button:hover {
+      opacity: 0.9;
     }
 
-    .progress-bar {
-      height: 10px;
-      background: #e1e5e9;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .progress-fill {
-      width: 0%;
-      height: 100%;
+    .button.completed-button {
       background: #2a9d8f;
     }
+
+    /* ABSCHLUSSPRÜFUNG */
+
+    .exam {
+      background: #14213d;
+      color: white;
+      border-radius: 18px;
+      padding: 22px;
+      margin-top: 22px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    .exam h2 {
+      margin-top: 0;
+      font-size: 21px;
+    }
+
+    .exam p {
+      line-height: 1.5;
+      opacity: 0.88;
+    }
+
+    .exam-button {
+      display: inline-block;
+      background: white;
+      color: #14213d;
+      padding: 12px 18px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      margin-top: 6px;
+    }
+
+    /* INFO */
+
+    .info {
+      background: white;
+      border-radius: 18px;
+      padding: 20px;
+      margin-top: 22px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    }
+
+    .info h3 {
+      margin-top: 0;
+    }
+
+    .info p {
+      color: #59636e;
+      line-height: 1.55;
+      margin-bottom: 0;
+    }
+
+    /* FOOTER */
 
     footer {
       text-align: center;
       color: #7a8490;
       padding: 20px;
-      font-size: 14px;
+      font-size: 13px;
+    }
+
+    /* IPHONE */
+
+    @media (max-width: 600px) {
+
+      header {
+        padding: 22px 16px;
+      }
+
+      header h1 {
+        font-size: 24px;
+      }
+
+      main {
+        padding: 18px 12px 40px;
+      }
+
+      .welcome {
+        padding: 20px;
+      }
+
+      .module {
+        padding: 18px;
+      }
+
+      .module h3 {
+        font-size: 19px;
+      }
+
+      .button,
+      .exam-button {
+        width: 100%;
+        text-align: center;
+      }
     }
   </style>
 </head>
 
 <body>
 
+  <!-- HEADER -->
+
   <header>
-    <h1>Flaschenland Akademie</h1>
-    <p>Ausbildung für Vorarbeiter & Führungskräfte</p>
+    <div class="header-inner">
+      <h1>Flaschenland Akademie</h1>
+      <p>Ausbildung für Vorarbeiter & Führungskräfte</p>
+    </div>
   </header>
+
 
   <main>
 
+    <!-- WILLKOMMEN -->
+
     <section class="welcome">
+
       <h2>Willkommen in der Akademie</h2>
 
       <p>
@@ -134,76 +331,403 @@
         für eine sichere, respektvolle und professionelle Führung.
       </p>
 
-      <div class="progress">
-        <strong>Dein Fortschritt</strong>
+      <div class="progress-section">
 
-        <div class="progress-bar">
-          <div class="progress-fill"></div>
+        <div class="progress-top">
+          <strong>Dein Fortschritt</strong>
+          <span class="progress-percent" id="progressPercent">0 %</span>
         </div>
 
-        <p>0 von 5 Modulen abgeschlossen</p>
+        <div class="progress-bar">
+          <div
+            class="progress-fill"
+            id="progressFill">
+          </div>
+        </div>
+
+        <p class="progress-text" id="progressText">
+          0 von 5 Modulen abgeschlossen
+        </p>
+
       </div>
+
     </section>
+
+
+    <!-- MODULE ÜBERSCHRIFT -->
+
+    <div class="section-title">
+      <h2>Deine Ausbildung</h2>
+      <p>Bearbeite die fünf Trainingstage Schritt für Schritt.</p>
+    </div>
+
+
+    <!-- MODULE -->
 
     <section class="modules">
 
+
+      <!-- TAG 1 -->
+
       <div class="module">
+
         <div class="module-number">Tag 1</div>
+
         <h3>Grundlagen der Führung</h3>
+
+        <div
+          class="status not-started"
+          id="status1">
+          Nicht gestartet
+        </div>
+
         <p>
           Rolle, Verantwortung, Aufgaben, Entscheidungsbefugnisse
           und die richtige Haltung als Vorarbeiter.
         </p>
-        <a class="button" href="tag1.html">Training starten</a>
+
+        <a
+          class="button"
+          id="button1"
+          href="tag1.html">
+          Training starten
+        </a>
+
       </div>
 
+
+      <!-- TAG 2 -->
+
       <div class="module">
+
         <div class="module-number">Tag 2</div>
+
         <h3>Kommunikation & Mitarbeiterführung</h3>
+
+        <div
+          class="status not-started"
+          id="status2">
+          Nicht gestartet
+        </div>
+
         <p>
           Klare Arbeitsanweisungen, Tonfall, Körpersprache,
           Feedback und respektvolle Kommunikation.
         </p>
-        <a class="button" href="tag2.html">Training starten</a>
+
+        <a
+          class="button"
+          id="button2"
+          href="tag2.html">
+          Training starten
+        </a>
+
       </div>
 
+
+      <!-- TAG 3 -->
+
       <div class="module">
+
         <div class="module-number">Tag 3</div>
+
         <h3>Konflikte & Zusammenarbeit</h3>
+
+        <div
+          class="status not-started"
+          id="status3">
+          Nicht gestartet
+        </div>
+
         <p>
           Konflikte erkennen, sachlich lösen, Grenzen setzen
           und professionell mit schwierigen Situationen umgehen.
         </p>
-        <a class="button" href="tag3.html">Training starten</a>
+
+        <a
+          class="button"
+          id="button3"
+          href="tag3.html">
+          Training starten
+        </a>
+
       </div>
 
+
+      <!-- TAG 4 -->
+
       <div class="module">
+
         <div class="module-number">Tag 4</div>
+
         <h3>Operative Aufgaben</h3>
+
+        <div
+          class="status not-started"
+          id="status4">
+          Nicht gestartet
+        </div>
+
         <p>
           Personal einsetzen, neue Mitarbeiter einarbeiten,
           Qualität kontrollieren und Arbeitsabläufe koordinieren.
         </p>
-        <a class="button" href="tag4.html">Training starten</a>
+
+        <a
+          class="button"
+          id="button4"
+          href="tag4.html">
+          Training starten
+        </a>
+
       </div>
 
+
+      <!-- TAG 5 -->
+
       <div class="module">
+
         <div class="module-number">Tag 5</div>
+
         <h3>Prozesskontrolle & Abschlussprüfung</h3>
+
+        <div
+          class="status not-started"
+          id="status5">
+          Nicht gestartet
+        </div>
+
         <p>
           Warenfluss, Quality Gate, Dokumentation, Übergaben
           und abschließende Prüfung.
         </p>
-        <a class="button" href="tag5.html">Training starten</a>
+
+        <a
+          class="button"
+          id="button5"
+          href="tag5.html">
+          Training starten
+        </a>
+
       </div>
+
 
     </section>
 
+
+    <!-- ABSCHLUSSPRÜFUNG -->
+
+    <section class="exam">
+
+      <h2>Abschlussprüfung</h2>
+
+      <p>
+        Nach der Bearbeitung der fünf Trainingstage kannst du
+        die Abschlussprüfung durchführen.
+      </p>
+
+      <p>
+        Die Prüfung besteht aus 40 Fragen.
+        Zum Bestehen werden mindestens 80 % benötigt.
+      </p>
+
+      <a
+        class="exam-button"
+        href="tag5.html#exam">
+        Zur Abschlussprüfung
+      </a>
+
+    </section>
+
+
+    <!-- FÜHRUNGSPRINZIP -->
+
+    <section class="info">
+
+      <h3>Grundprinzip der Akademie</h3>
+
+      <p>
+        <strong>Führen durch Klarheit – nicht durch Einschüchterung.</strong>
+        Ein Vorarbeiter führt durch klare Anweisungen,
+        respektvollen Umgang, Kontrolle, Verantwortung
+        und konsequentes Handeln.
+      </p>
+
+    </section>
+
+
   </main>
+
 
   <footer>
     Flaschenland Akademie · Interne Weiterbildung
   </footer>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    /*
+      Fortschritt der 5 Trainingstage
+
+      Aktuell wird der Status über localStorage
+      gespeichert.
+
+      Später können diese Daten problemlos
+      durch Supabase ersetzt werden.
+    */
+
+
+    function getModuleStatus(day) {
+
+      const completed =
+        localStorage.getItem("tag" + day + "Completed");
+
+      const started =
+        localStorage.getItem("tag" + day + "Started");
+
+
+      if (completed === "true") {
+        return "completed";
+      }
+
+      if (started === "true") {
+        return "started";
+      }
+
+      return "not-started";
+    }
+
+
+    function updateModule(day) {
+
+      const statusElement =
+        document.getElementById("status" + day);
+
+      const buttonElement =
+        document.getElementById("button" + day);
+
+      const status =
+        getModuleStatus(day);
+
+
+      if (status === "completed") {
+
+        statusElement.textContent =
+          "Abgeschlossen";
+
+        statusElement.className =
+          "status completed";
+
+        buttonElement.textContent =
+          "Training erneut öffnen";
+
+        buttonElement.className =
+          "button completed-button";
+
+      }
+
+
+      else if (status === "started") {
+
+        statusElement.textContent =
+          "In Bearbeitung";
+
+        statusElement.className =
+          "status started";
+
+        buttonElement.textContent =
+          "Training fortsetzen";
+
+        buttonElement.className =
+          "button";
+
+      }
+
+
+      else {
+
+        statusElement.textContent =
+          "Nicht gestartet";
+
+        statusElement.className =
+          "status not-started";
+
+        buttonElement.textContent =
+          "Training starten";
+
+        buttonElement.className =
+          "button";
+
+      }
+
+    }
+
+
+    function updateProgress() {
+
+      let completedModules = 0;
+
+
+      for (let day = 1; day <= 5; day++) {
+
+        if (
+          localStorage.getItem(
+            "tag" + day + "Completed"
+          ) === "true"
+        ) {
+
+          completedModules++;
+
+        }
+
+      }
+
+
+      const percentage =
+        Math.round(
+          (completedModules / 5) * 100
+        );
+
+
+      document.getElementById(
+        "progressFill"
+      ).style.width =
+        percentage + "%";
+
+
+      document.getElementById(
+        "progressPercent"
+      ).textContent =
+        percentage + " %";
+
+
+      document.getElementById(
+        "progressText"
+      ).textContent =
+        completedModules +
+        " von 5 Modulen abgeschlossen";
+
+    }
+
+
+    /*
+      Beim Laden der Startseite
+      werden alle Module aktualisiert.
+    */
+
+    for (let day = 1; day <= 5; day++) {
+
+      updateModule(day);
+
+    }
+
+
+    updateProgress();
+
+
+  </script>
 
 </body>
 </html>
