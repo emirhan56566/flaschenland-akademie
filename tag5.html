@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Flaschenland Akademie – Tag 5</title>
+
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f6f8;
+    color: #222;
+}
+
+header {
+    background: #17365d;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+.card,
+.progress-box {
+    background: white;
+    padding: 20px;
+    margin-bottom: 18px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+h1,
+h2 {
+    margin-top: 0;
+}
+
+.progress {
+    height: 15px;
+    background: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #2e75b6;
+}
+
+button {
+    background: #17365d;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.answer {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: #eef2f5;
+    color: #222;
+    margin: 8px 0;
+}
+
+.answer.correct {
+    background: #b7e1cd;
+}
+
+.answer.wrong {
+    background: #f4cccc;
+}
+
+.quiz {
+    display: none;
+}
+
+#exam {
+    display: none;
+}
+
+.question {
+    margin-bottom: 25px;
+}
+
+.result {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.warning {
+    padding: 15px;
+    border-radius: 8px;
+    background: #fff3cd;
+    margin-top: 15px;
+}
+
+.success {
+    padding: 15px;
+    border-radius: 8px;
+    background: #d9ead3;
+    margin-top: 15px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Flaschenland Akademie</h1>
+
+<p>Tag 5 – Prozesssteuerung & Abschlussprüfung</p>
+
+</header>
+
+
+<div class="container">
+
+
+<div class="progress-box">
+
+<strong>Fortschritt Tag 5</strong>
+
+<div class="progress">
+
+<div
+class="progress-bar"
+id="progressBar">
+</div>
+
+</div>
+
+<p id="progressText">
+0 % abgeschlossen
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>Willkommen zu Tag 5</h2>
+
+<p>
+Heute geht es darum, wie ein Vorarbeiter den gesamten Arbeitsprozess
+im Blick behält.
+</p>
+
+<p>
+Dazu gehören Warenfluss, Schnittstellen, Dokumentation,
+Kennzahlen, Prioritäten, Abweichungen und Eskalationen.
+</p>
+
+<p>
+Am Ende folgt der Tag-5-Test.
+</p>
+
+</div>
+
+
+<!-- MODUL 1 -->
+
+<div class="card">
+
+<h2>1. Den gesamten Prozess verstehen</h2>
+
+<p>
+Ein Vorarbeiter darf nicht nur seinen eigenen Arbeitsplatz betrachten.
+Er muss verstehen, wie die einzelnen Bereiche miteinander verbunden sind.
+</p>
+
+<p>
+Ein typischer Ablauf kann beispielsweise sein:
+</p>
+
+<ul>
+
+<li>Kommissionierung</li>
+<li>Quality Gate</li>
+<li>Verpackung</li>
+<li>Versand</li>
+<li>Sortierung nach Carrier</li>
+<li>Verladung auf Wechselbrücken</li>
+
+</ul>
+
+<p>
+Eine Störung an einer Stelle kann Auswirkungen auf den gesamten Ablauf haben.
+</p>
+
+<button onclick="showQuiz(this)">
+Mini-Quiz starten
+</button>
+
+<div class="quiz">
+
+<p>
+<strong>
+Warum muss ein Vorarbeiter den gesamten Prozess verstehen?
+</strong>
+</p>
+
+<button class="answer" onclick="answer(this,true)">
+Weil Probleme an einer Stelle den gesamten Ablauf beeinflussen können
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Weil er jede Arbeit selbst machen muss
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Weil einzelne Arbeitsplätze keine Bedeutung haben
+</button>
+
+</div>
+
+</div>
+
+
+<!-- MODUL 2 -->
+
+<div class="card">
+
+<h2>2. Schnittstellen zwischen Bereichen</h2>
+
+<p>
+Besonders wichtig sind die Übergaben zwischen den einzelnen Bereichen.
+</p>
+
+<p>
+Eine gute Übergabe bedeutet:
+</p>
+
+<ul>
+
+<li>richtige Ware</li>
+<li>richtiger Auftrag</li>
+<li>richtige Menge</li>
+<li>richtige Zuordnung</li>
+<li>klarer Status</li>
+
+</ul>
+
+<p>
+Unklare Übergaben führen häufig zu Rückfragen, Verzögerungen und Fehlern.
+</p>
+
+<button onclick="showQuiz(this)">
+Mini-Quiz starten
+</button>
+
+<div class="quiz">
+
+<p>
+<strong>
+Was gehört zu einer guten Übergabe?
+</strong>
+</p>
+
+<button class="answer" onclick="answer(this,true)">
+Ware, Auftrag und Status müssen eindeutig sein
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Nur die Ware muss vorhanden sein
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Der nächste Bereich soll selbst herausfinden, was zu tun ist
+</button>
+
+</div>
+
+</div>
+
+
+<!-- MODUL 3 -->
+
+<div class="card">
+
+<h2>3. Prioritäten setzen</h2>
+
+<p>
+Nicht jede Aufgabe ist gleich dringend.
+</p>
+
+<p>
+Der Vorarbeiter muss entscheiden, was zuerst erledigt werden muss.
+Dabei können beispielsweise Liefertermine, Stillstände, fehlendes Material,
+Fehler oder bevorstehende Verladungen eine Rolle spielen.
+</p>
+
+<button onclick="showQuiz(this)">
+Mini-Quiz starten
+</button>
+
+<div class="quiz">
+
+<p>
+<strong>
+Was bedeutet Priorisierung?
+</strong>
+</p>
+
+<button class="answer" onclick="answer(this,true)">
+Wichtige und dringende Aufgaben zuerst bearbeiten
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Alles gleichzeitig beginnen
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Nur die einfachsten Aufgaben erledigen
+</button>
+
+</div>
+
+</div>
+
+
+<!-- MODUL 4 -->
+
+<div class="card">
+
+<h2>4. Abweichungen erkennen</h2>
+
+<p>
+Ein Vorarbeiter muss erkennen, wenn der normale Prozess nicht funktioniert.
+</p>
+
+<p>
+Beispiele:
+</p>
+
+<ul>
+
+<li>ungewöhnlich viele Fehler</li>
+<li>fehlendes Material</li>
+<li>offene Aufträge</li>
+<li>Stau im Prozess</li>
+<li>falsche Zuordnung</li>
+<li>ungewöhnlich lange Bearbeitungszeiten</li>
+
+</ul>
+
+<button onclick="showQuiz(this)">
+Mini-Quiz starten
+</button>
+
+<div class="quiz">
+
+<p>
+<strong>
+Was sollte bei einer Abweichung passieren?
+</strong>
+</p>
+
+<button class="answer" onclick="answer(this,true)">
+Ursache prüfen und geeignete Maßnahmen einleiten
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Abweichung ignorieren
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Sofort einen Mitarbeiter beschuldigen
+</button>
+
+</div>
+
+</div>
+
+
+<!-- MODUL 5 -->
+
+<div class="card">
+
+<h2>5. Fehleranalyse</h2>
+
+<p>
+Bei einem Fehler sollte nicht nur gefragt werden:
+„Wer hat das gemacht?“
+</p>
+
+<p>
+Wichtiger ist:
+„Warum konnte dieser Fehler entstehen?“
+</p>
+
+<p>
+Mögliche Ursachen können beispielsweise fehlende Schulung,
+unklare Arbeitsanweisung, falsches Material, falsche Lagerung
+oder ein Prozessfehler sein.
+</p>
+
+<button onclick="showQuiz(this)">
+Mini-Quiz starten
+</button>
+
+<div class="quiz">
+
+<p>
+<strong>
+Was ist bei einer Fehleranalyse wichtig?
+</strong>
+</p>
+
+<button class="answer" onclick="answer(this,true)">
+Die Ursache des Fehlers finden
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Nur einen Schuldigen finden
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Fehler möglichst verstecken
+</button>
+
+</div>
+
+</div>
+
+
+<!-- MODUL 6 -->
+
+<div class="card">
+
+<h2>6. Maßnahmen statt Schuldzuweisung</h2>
+
+<p>
+Eine professionelle Führungskraft fragt:
+</p>
+
+<p>
+<strong>
+Was müssen wir verändern, damit dieser Fehler nicht wieder passiert?
+</strong>
+</p>
+
+<p>
+Das kann beispielsweise zusätzliche Schulung, eine bessere Kontrolle,
+eine Prozessänderung oder eine klarere Arbeitsanweisung bedeuten.
+</p>
+
+<button onclick="showQuiz(this)">
+Mini-Quiz starten
+</button>
+
+<div class="quiz">
+
+<p>
+<strong>
+Was ist das Ziel einer Korrekturmaßnahme?
+</strong>
+</p>
+
+<button class="answer" onclick="answer(this,true)">
+Wiederholung des Problems verhindern
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Mitarbeiter bestrafen
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Problem weitergeben
+</button>
+
+</div>
+
+</div>
+
+
+<!-- MODUL 7 -->
+
+<div class="card">
+
+<h2>7. Kennzahlen und Leistung</h2>
+
+<p>
+Kennzahlen können helfen, den Arbeitsbereich objektiv zu beurteilen.
+</p>
+
+<p>
+Mögliche Kennzahlen sind beispielsweise Leistung, Fehlerquote,
+Auftragsrückstände, Durchlaufzeit oder Qualitätsabweichungen.
+</p>
+
+<p>
+Kennzahlen sollen nicht blind bewertet werden.
+Man muss immer auch die Rahmenbedingungen betrachten.
+</p>
+
+<button onclick="showQuiz(this)">
+Mini-Quiz starten
+</button>
+
+<div class="quiz">
+
+<p>
+<strong>
+Wozu dienen Kennzahlen?
+</strong>
+</p>
+
+<button class="answer" onclick="answer(this,true)">
+Um Entwicklungen und Abweichungen objektiv zu erkennen
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Um automatisch Schuldige zu bestimmen
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Um Mitarbeiter gegeneinander auszuspielen
+</button>
+
+</div>
+
+</div>
+
+
+<!-- MODUL 8 -->
+
+<div class="card">
+
+<h2>8. Dokumentation im Tagesgeschäft</h2>
+
+<p>
+Wichtige Ereignisse und Abweichungen sollten nachvollziehbar dokumentiert
+werden.
+</p>
+
+<p>
+Dazu gehören beispielsweise:
+</p>
+
+<ul>
+
+<li>Personaleinsatz</li>
+<li>besondere Aufträge</li>
+<li>Qualitätsprobleme</li>
+<li>Materialengpässe</li>
+<li>Störungen</li>
+<li>Maßnahmen</li>
+<li>offene Punkte</li>
+
+</ul>
+
+<button onclick="showQuiz(this)">
+Mini-Quiz starten
+</button>
+
+<div class="quiz">
+
+<p>
+<strong>
+Was gehört in eine gute Tagesdokumentation?
+</strong>
+</p>
+
+<button class="answer" onclick="answer(this,true)">
+Wichtige Ereignisse, Abweichungen und Maßnahmen
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Nur persönliche Meinungen
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Gerüchte
+</button>
+
+</div>
+
+</div>
+
+
+<!-- MODUL 9 -->
+
+<div class="card">
+
+<h2>9. Eskalationswege</h2>
+
+<p>
+Nicht jedes Problem kann ein Vorarbeiter alleine lösen.
+</p>
+
+<p>
+Wenn eine Entscheidung außerhalb der eigenen Zuständigkeit liegt,
+wird das Problem an die zuständige Führungsebene weitergegeben.
+</p>
+
+<p>
+Eine gute Eskalation enthält:
+</p>
+
+<ul>
+
+<li>Was ist passiert?</li>
+<li>Welche Auswirkungen gibt es?</li>
+<li>Was wurde bereits versucht?</li>
+<li>Was wird jetzt benötigt?</li>
+
+</ul>
+
+<button onclick="showQuiz(this)">
+Mini-Quiz starten
+</button>
+
+<div class="quiz">
+
+<p>
+<strong>
+Was gehört zu einer guten Eskalation?
+</strong>
+</p>
+
+<button class="answer" onclick="answer(this,true)">
+Problem, Auswirkung, bisherige Maßnahmen und benötigte Entscheidung
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Nur „Wir haben ein Problem“
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Eine persönliche Beschwerde
+</button>
+
+</div>
+
+</div>
+
+
+<!-- MODUL 10 -->
+
+<div class="card">
+
+<h2>10. Schichtübergabe</h2>
+
+<p>
+Eine gute Schichtübergabe sorgt dafür, dass die nächste Führungskraft
+den aktuellen Stand kennt.
+</p>
+
+<p>
+Offene Aufträge, Störungen, Qualitätsprobleme, Materialthemen und
+wichtige Besonderheiten müssen weitergegeben werden.
+</p>
+
+<button onclick="showQuiz(this)">
+Mini-Quiz starten
+</button>
+
+<div class="quiz">
+
+<p>
+<strong>
+Was ist das Ziel einer Schichtübergabe?
+</strong>
+</p>
+
+<button class="answer" onclick="answer(this,true)">
+Die nächste Schicht kennt den aktuellen Stand
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Möglichst wenig Informationen weitergeben
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Probleme verschweigen
+</button>
+
+</div>
+
+</div>
+
+
+<!-- MODUL 11 -->
+
+<div class="card">
+
+<h2>11. 5S und Ordnung</h2>
+
+<p>
+Ordnung ist ein Bestandteil professioneller Prozesssteuerung.
+</p>
+
+<p>
+Arbeitswege müssen frei sein.
+Material muss auffindbar sein.
+Unnötige Gegenstände gehören nicht in Verkehrs- oder Fluchtwege.
+</p>
+
+<p>
+Glasscherben, beschädigte Ware oder andere Gefahren müssen sofort
+bearbeitet werden.
+</p>
+
+<button onclick="showQuiz(this)">
+Mini-Quiz starten
+</button>
+
+<div class="quiz">
+
+<p>
+<strong>
+Warum ist Ordnung im Arbeitsbereich wichtig?
+</strong>
+</p>
+
+<button class="answer" onclick="answer(this,true)">
+Sie erhöht Sicherheit, Übersicht und Prozessqualität
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Nur damit es schöner aussieht
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Ordnung hat keinen Einfluss auf den Prozess
+</button>
+
+</div>
+
+</div>
+
+
+<!-- MODUL 12 -->
+
+<div class="card">
+
+<h2>12. Der Vorarbeiter als Prozessverantwortlicher</h2>
+
+<p>
+Der Vorarbeiter verbindet Menschen, Aufgaben und Prozesse.
+</p>
+
+<p>
+Er sorgt dafür, dass:
+</p>
+
+<ul>
+
+<li>Personal passend eingesetzt wird</li>
+<li>Aufträge richtig bearbeitet werden</li>
+<li>Qualität kontrolliert wird</li>
+<li>Material vorhanden ist</li>
+<li>Probleme erkannt werden</li>
+<li>Übergaben funktionieren</li>
+<li>Abweichungen dokumentiert werden</li>
+<li>notwendige Eskalationen erfolgen</li>
+
+</ul>
+
+<p>
+<strong>
+Der Vorarbeiter muss nicht alles selbst machen.
+Er muss dafür sorgen, dass der Bereich funktioniert.
+</strong>
+</p>
+
+<button onclick="showQuiz(this)">
+Mini-Quiz starten
+</button>
+
+<div class="quiz">
+
+<p>
+<strong>
+Was ist die wichtigste Aufgabe eines Vorarbeiters?
+</strong>
+</p>
+
+<button class="answer" onclick="answer(this,true)">
+Den Bereich sicher, strukturiert und qualitativ gut steuern
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Alles selbst erledigen
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Nur Anweisungen geben
+</button>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>Zusammenfassung Tag 5</h2>
+
+<ul>
+
+<li>Gesamtprozess verstehen</li>
+<li>Schnittstellen sauber steuern</li>
+<li>Prioritäten setzen</li>
+<li>Abweichungen erkennen</li>
+<li>Fehlerursachen analysieren</li>
+<li>Maßnahmen einleiten</li>
+<li>Kennzahlen verstehen</li>
+<li>Dokumentieren</li>
+<li>Richtig eskalieren</li>
+<li>Schichtübergaben sauber durchführen</li>
+<li>Ordnung und Sicherheit sicherstellen</li>
+
+</ul>
+
+<div class="success">
+
+<strong>Du bist jetzt bereit für die Abschlussprüfung.</strong>
+
+<p>
+Die Abschlussprüfung umfasst die Inhalte aller fünf Trainingstage.
+</p>
+
+</div>
+
+<button onclick="startExam()">
+Abschlussprüfung starten
+</button>
+
+</div>
+
+
+<!-- ABSCHLUSSPRÜFUNG -->
+
+<div id="exam" class="card">
+
+<h2>Abschlussprüfung</h2>
+
+<p>
+Die Prüfung umfasst <strong>40 Fragen</strong>.
+</p>
+
+<p>
+Zum Bestehen werden mindestens <strong>80 %</strong> benötigt.
+Das entspricht mindestens <strong>32 richtigen Antworten</strong>.
+</p>
+
+<div class="warning">
+
+<strong>Wichtig:</strong>
+
+<p>
+Beantworte alle Fragen sorgfältig.
+Die Prüfung soll zeigen, ob die wichtigsten Grundlagen
+der Vorarbeiter-Aufgabe verstanden wurden.
+</p>
+
+</div>
+
+<div id="questions"></div>
+
+<button onclick="finishExam()">
+Prüfung auswerten
+</button>
+
+<div id="result" class="result"></div>
+
+</div>
+
+</div>
+
+
+<script>
+
+
+function showQuiz(button) {
+
+    const quiz = button.nextElementSibling;
+
+    quiz.style.display = "block";
+
+    button.style.display = "none";
+
+}
+
+
+function answer(button, correct) {
+
+    const answers =
+        button.parentElement.querySelectorAll(".answer");
+
+    answers.forEach(function(a) {
+
+        a.disabled = true;
+
+    });
+
+    if (correct) {
+
+        button.classList.add("correct");
+
+    } else {
+
+        button.classList.add("wrong");
+
+        answers.forEach(function(a) {
+
+            const code =
+                a.getAttribute("onclick");
+
+            if (code && code.includes("true")) {
+
+                a.classList.add("correct");
+
+            }
+
+        });
+
+    }
+
+    updateProgress();
+
+}
+
+
+function updateProgress() {
+
+    const quizzes =
+        document.querySelectorAll(".quiz");
+
+    let completed = 0;
+
+    quizzes.forEach(function(quiz) {
+
+        const answers =
+            quiz.querySelectorAll(".answer");
+
+        let finished = false;
+
+        answers.forEach(function(button) {
+
+            if (button.disabled) {
+
+                finished = true;
+
+            }
+
+        });
+
+        if (finished) {
+
+            completed++;
+
+        }
+
+    });
+
+    const percent =
+        Math.round(
+            (completed / quizzes.length) * 100
+        );
+
+    document.getElementById("progressBar")
+        .style.width = percent + "%";
+
+    document.getElementById("progressText")
+        .innerText =
+        percent + " % abgeschlossen";
+
+}
+
+
+/* ABSCHLUSSPRÜFUNG */
+
+const examQuestions = [
+
+[
+"Was ist eine zentrale Aufgabe eines Vorarbeiters?",
+[
+"Den Arbeitsbereich koordinieren und steuern",
+"Alles selbst erledigen",
+"Nur kontrollieren",
+"Nur Befehle geben"
+]
+],
+
+[
+"Was sollte bei der Mitarbeitereinteilung berücksichtigt werden?",
+[
+"Qualifikation, Erfahrung und Auftragsanforderung",
+"Nur Sympathie",
+"Nur Alter",
+"Nur Geschwindigkeit"
+]
+],
+
+[
+"Wie werden neue Mitarbeiter sinnvoll eingearbeitet?",
+[
+"Erklären, zeigen, üben und kontrollieren",
+"Sofort schwierigste Aufgaben geben",
+"Einmal erklären und nie kontrollieren",
+"Nur zuschauen"
+]
+],
+
+[
+"Was ist bei Qualität wichtig?",
+[
+"Regelmäßig kontrollieren und Fehler korrigieren",
+"Nur am Tagesende kontrollieren",
+"Auf Kontrolle verzichten",
+"Fehler ignorieren"
+]
+],
+
+[
+"Was sollte bei einem wiederkehrenden Fehler passieren?",
+[
+"Ursache analysieren und Maßnahme einleiten",
+"Nur schimpfen",
+"Einen Schuldigen suchen",
+"Fehler verstecken"
+]
+],
+
+[
+"Was bedeutet Priorisierung?",
+[
+"Wichtige und dringende Aufgaben zuerst bearbeiten",
+"Alles gleichzeitig machen",
+"Nur einfache Aufgaben machen",
+"Nichts planen"
+]
+],
+
+[
+"Warum sind Schnittstellen wichtig?",
+[
+"Weil Übergaben den gesamten Prozess beeinflussen",
+"Weil jeder Bereich unabhängig ist",
+"Weil Übergaben unwichtig sind",
+"Weil nur die letzte Station zählt"
+]
+],
+
+[
+"Was gehört zu einer guten Übergabe?",
+[
+"Richtige Ware, Auftrag, Menge und Status",
+"Nur die Ware",
+"Nur eine mündliche Aussage",
+"Keine Informationen"
+]
+],
+
+[
+"Was sollte bei Materialengpässen passieren?",
+[
+"Frühzeitig erkennen und Nachschub organisieren",
+"Warten bis alles leer ist",
+"Mitarbeiter beschuldigen",
+"Problem ignorieren"
+]
+],
+
+[
+"Wer koordiniert die Aufgaben von Servicekräften?",
+[
+"Der Vorarbeiter entsprechend der Prioritäten",
+"Immer der Mitarbeiter selbst",
+"Niemand",
+"Nur der Versand"
+]
+],
+
+[
+"Was ist bei beschädigter Ware wichtig?",
+[
+"Ursache prüfen und Ersatz organisieren",
+"Ware einfach weitergeben",
+"Problem ignorieren",
+"Den Mitarbeiter beschuldigen"
+]
+],
+
+[
+"Wie sollten fertige Pakete sortiert werden?",
+[
+"Nach dem richtigen Carrier",
+"Beliebig",
+"Nur nach Größe",
+"Gar nicht"
+]
+],
+
+[
+"Was ist das Ziel eines Quality Gates?",
+[
+"Fehler erkennen und kontrollierte Ware weitergeben",
+"Kontrolle vermeiden",
+"Alles möglichst schnell weitergeben",
+"Fehler verstecken"
+]
+],
+
+[
+"Was gehört zu einer guten Tagesdokumentation?",
+[
+"Ereignisse, Abweichungen und Maßnahmen",
+"Gerüchte",
+"Persönliche Beleidigungen",
+"Nur Meinungen"
+]
+],
+
+[
+"Warum sind Kennzahlen hilfreich?",
+[
+"Sie zeigen Entwicklungen und Abweichungen",
+"Sie bestimmen automatisch Schuldige",
+"Sie ersetzen jede Führung",
+"Sie sind nur für Mitarbeiter"
+]
+],
+
+[
+"Wie sollte eine Führungskraft mit einem Fehler umgehen?",
+[
+"Sachlich analysieren und korrigieren",
+"Sofort schreien",
+"Beleidigen",
+"Ignorieren"
+]
+],
+
+[
+"Was ist das Ziel einer Korrekturmaßnahme?",
+[
+"Verhindern, dass das Problem erneut auftritt",
+"Mitarbeiter bloßstellen",
+"Problem weitergeben",
+"Schuldige suchen"
+]
+],
+
+[
+"Was sollte bei einer Eskalation enthalten sein?",
+[
+"Problem, Auswirkung, bisherige Maßnahmen und benötigte Entscheidung",
+"Nur die Aussage 'Es gibt ein Problem'",
+"Nur eine Beschwerde",
+"Keine Informationen"
+]
+],
+
+[
+"Wann sollte ein Problem eskaliert werden?",
+[
+"Wenn es außerhalb der eigenen Zuständigkeit liegt oder nicht gelöst werden kann",
+"Immer",
+"Nie",
+"Nur wenn jemand danach fragt"
+]
+],
+
+[
+"Was ist bei einer Schichtübergabe wichtig?",
+[
+"Offene Punkte und aktuelle Situation weitergeben",
+"Möglichst wenig Informationen geben",
+"Probleme verschweigen",
+"Nur persönliche Meinung mitteilen"
+]
+],
+
+[
+"Warum ist Ordnung im Lager wichtig?",
+[
+"Für Sicherheit, Übersicht und Prozessqualität",
+"Nur für das Aussehen",
+"Ordnung ist unwichtig",
+"Nur für Besucher"
+]
+],
+
+[
+"Was gehört nicht in Verkehrs- oder Fluchtwege?",
+[
+"Unnötige Paletten und Gegenstände",
+"Keine Gegenstände",
+"Nur gekennzeichnete Wege",
+"Notwendige Sicherheitsausstattung"
+]
+],
+
+[
+"Was sollte bei Glasbruch passieren?",
+[
+"Sofort sichern und beseitigen",
+"Ignorieren",
+"Weiterarbeiten",
+"Verstecken"
+]
+],
+
+[
+"Was bedeutet Verantwortung?",
+[
+"Dafür sorgen, dass Aufgaben erledigt werden",
+"Alles selbst machen",
+"Probleme ignorieren",
+"Andere verantwortlich machen"
+]
+],
+
+[
+"Was ist professionelle Führung?",
+[
+"Klarheit, Respekt und Konsequenz",
+"Einschüchterung",
+"Beleidigung",
+"Angst erzeugen"
+]
+],
+
+[
+"Was sollte ein Vorarbeiter bei einer Provokation tun?",
+[
+"Ruhig und sachlich bleiben",
+"Zurückschreien",
+"Zurückbeleidigen",
+"Drohen"
+]
+],
+
+[
+"Wie sollte ein Konfliktgespräch geführt werden?",
+[
+"Anhand konkreter Situationen und Fakten",
+"Mit persönlichen Angriffen",
+"Mit Gerüchten",
+"Mit Drohungen"
+]
+],
+
+[
+"Was ist bei Konflikten zwischen Vorarbeitern wichtig?",
+[
+"Intern und professionell klären",
+"Vor Mitarbeitern austragen",
+"Kollegen schlechtmachen",
+"Mitarbeiter aufhetzen"
+]
+],
+
+[
+"Was sollte ein Führungsteam vermeiden?",
+[
+"Machtkämpfe",
+"Abstimmung",
+"Respekt",
+"Zusammenarbeit"
+]
+],
+
+[
+"Was bedeutet 'Fakten statt Gerüchte'?",
+[
+"Entscheidungen auf nachvollziehbare Informationen stützen",
+"Gerüchte als Wahrheit behandeln",
+"Alles glauben",
+"Vermutungen dokumentieren"
+]
+],
+
+[
+"Wie sollte ein schwieriger Mitarbeiter behandelt werden?",
+[
+"Sachlich, respektvoll und konsequent",
+"Persönlich angegriffen",
+"Absichtlich benachteiligt",
+"Bloßgestellt"
+]
+],
+
+[
+"Was sollte ein Vorarbeiter bei einer Abweichung zuerst tun?",
+[
+"Situation prüfen und Ursache feststellen",
+"Sofort Schuldigen suchen",
+"Ignorieren",
+"Laut werden"
+]
+],
+
+[
+"Was bedeutet Qualitätsbewusstsein?",
+[
+"Fehler vermeiden, erkennen und korrigieren",
+"Nur schnell arbeiten",
+"Fehler verstecken",
+"Kontrolle vermeiden"
+]
+],
+
+[
+"Was ist bei der Personaleinteilung falsch?",
+[
+"Nur nach persönlicher Sympathie entscheiden",
+"Qualifikation beachten",
+"Erfahrung beachten",
+"Auftragsanforderung beachten"
+]
+],
+
+[
+"Was ist bei einem neuen Mitarbeiter wichtig?",
+[
+"Anforderungen schrittweise erhöhen",
+"Sofort schwierigste Aufträge geben",
+"Keine Kontrolle",
+"Keine Unterstützung"
+]
+],
+
+[
+"Was bedeutet eine gute Prozesssteuerung?",
+[
+"Menschen, Aufträge, Qualität und Schnittstellen koordinieren",
+"Nur Geschwindigkeit erhöhen",
+"Nur Mitarbeiter kontrollieren",
+"Alles selbst erledigen"
+]
+],
+
+[
+"Was sollte bei einem offenen Auftrag geprüft werden?",
+[
+"Status, Ursache und notwendige Maßnahme",
+"Nichts",
+"Nur der Mitarbeiter",
+"Nur die Uhrzeit"
+]
+],
+
+[
+"Warum müssen Carrier korrekt getrennt werden?",
+[
+"Damit Versand und Verladung korrekt funktionieren",
+"Weil es besser aussieht",
+"Nur wegen der Paletten",
+"Es spielt keine Rolle"
+]
+],
+
+[
+"Was ist das wichtigste Ziel eines Vorarbeiters?",
+[
+"Sicherer, strukturierter und qualitativ guter Arbeitsablauf",
+"Möglichst laut auftreten",
+"Macht zeigen",
+"Alles alleine machen"
+]
+],
+
+[
+"Was sollte ein Vorarbeiter tun, wenn er eine Entscheidung nicht selbst treffen darf?",
+[
+"Über den vorgesehenen Führungsweg eskalieren",
+"Die Entscheidung einfach selbst treffen",
+"Problem ignorieren",
+"Mitarbeiter entscheiden lassen"
+]
+]
+
+];
+
+
+function startExam() {
+
+    document.getElementById("exam")
+        .style.display = "block";
+
+    const container =
+        document.getElementById("questions");
+
+    container.innerHTML = "";
+
+    examQuestions.forEach(function(question, index) {
+
+        const div =
+            document.createElement("div");
+
+        div.className = "question";
+
+        const title =
+            document.createElement("p");
+
+        title.innerHTML =
+            "<strong>" +
+            (index + 1) +
+            ". " +
+            question[0] +
+            "</strong>";
+
+        div.appendChild(title);
+
+        question[1].forEach(
+            function(answerText, answerIndex) {
+
+                const button =
+                    document.createElement("button");
+
+                button.className = "answer";
+
+                button.innerText =
+                    answerText;
+
+                button.onclick = function() {
+
+                    const all =
+                        div.querySelectorAll(".answer");
+
+                    all.forEach(function(a) {
+
+                        a.disabled = true;
+
+                    });
+
+                    button.dataset.selected =
+                        answerIndex;
+
+                    if (answerIndex === 0) {
+
+                        button.classList.add("correct");
+
+                    } else {
+
+                        button.classList.add("wrong");
+
+                        all[0].classList.add("correct");
+
+                    }
+
+                };
+
+                div.appendChild(button);
+
+            }
+        );
+
+        container.appendChild(div);
+
+    });
+
+    document.getElementById("exam")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+}
+
+
+function finishExam() {
+
+    const questionDivs =
+        document.querySelectorAll(".question");
+
+    let correctAnswers = 0;
+
+    let answered = 0;
+
+    questionDivs.forEach(function(div) {
+
+        const answers =
+            div.querySelectorAll(".answer");
+
+        let selected = null;
+
+        answers.forEach(function(button) {
+
+            if (
+                button.dataset.selected !==
+                undefined
+            ) {
+
+                selected =
+                    parseInt(
+                        button.dataset.selected
+                    );
+
+            }
+
+        });
+
+        if (selected !== null) {
+
+            answered++;
+
+            if (selected === 0) {
+
+                correctAnswers++;
+
+            }
+
+        }
+
+    });
+
+
+    if (answered < examQuestions.length) {
+
+        document.getElementById("result")
+            .innerText =
+            "Bitte beantworte alle 40 Fragen.";
+
+        return;
+
+    }
+
+
+    const percent =
+        Math.round(
+            (correctAnswers /
+            examQuestions.length) * 100
+        );
+
+
+    if (percent >= 80) {
+
+        document.getElementById("result")
+            .innerText =
+            "BESTANDEN! " +
+            correctAnswers +
+            " von " +
+            examQuestions.length +
+            " richtig (" +
+            percent +
+            " %).";
+
+    } else {
+
+        document.getElementById("result")
+            .innerText =
+            "NICHT BESTANDEN. " +
+            correctAnswers +
+            " von " +
+            examQuestions.length +
+            " richtig (" +
+            percent +
+            " %). Mindestens 80 % werden benötigt.";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
