@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flaschenland Akademie – Tag 4</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f6f8;
+    color: #222;
+}
+
+header {
+    background: #17365d;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+.progress-box,
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.progress {
+    height: 15px;
+    background: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #2e75b6;
+}
+
+h1, h2 {
+    margin-top: 0;
+}
+
+button {
+    background: #17365d;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.answer {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: #eef2f5;
+    color: #222;
+    margin: 8px 0;
+}
+
+.answer.correct {
+    background: #b7e1cd;
+}
+
+.answer.wrong {
+    background: #f4cccc;
+}
+
+.quiz {
+    display: none;
+}
+
+#exam {
+    display: none;
+}
+
+.question {
+    margin-bottom: 25px;
+}
+
+.result {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Flaschenland Akademie</h1>
+<p>Tag 4 – Operative Vorarbeiter-Aufgaben</p>
+</header>
+
+<div class="container">
+
+<div class="progress-box">
+<strong>Fortschritt Tag 4</strong>
+
+<div class="progress">
+<div class="progress-bar" id="progressBar"></div>
+</div>
+
+<p id="progressText">0 % abgeschlossen</p>
+</div>
+
+
+<div class="card">
+<h2>Willkommen zu Tag 4</h2>
+
+<p>
+Heute geht es um die praktischen Aufgaben eines Vorarbeiters im täglichen
+Arbeitsablauf.
+</p>
+
+<p>
+Ein Vorarbeiter sorgt dafür, dass Mitarbeiter passend eingesetzt werden,
+Aufträge richtig verteilt werden, Qualität kontrolliert wird und der
+Arbeitsprozess funktioniert.
+</p>
+</div>
+
+
+<div class="card">
+<h2>1. Mitarbeiter richtig einsetzen</h2>
+
+<p>
+Nicht jeder Mitarbeiter sollte jeden Auftrag sofort übernehmen.
+Bei der Einteilung müssen Qualifikation, Erfahrung, Leistungsstand,
+Einarbeitungsstand und die Schwierigkeit des Auftrags berücksichtigt werden.
+</p>
+
+<p>
+Ein neuer Mitarbeiter beginnt grundsätzlich mit überschaubaren Aufgaben.
+Mit zunehmender Sicherheit wird die Schwierigkeit gesteigert.
+</p>
+
+<button onclick="showQuiz(this)">
+Mini-Quiz starten
+</button>
+
+<div class="quiz">
+
+<p><strong>Was sollte bei der Mitarbeitereinteilung berücksichtigt werden?</strong></p>
+
+<button class="answer" onclick="answer(this,true)">
+Qualifikation, Erfahrung und Auftragsanforderung
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Nur wer zuerst kommt
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Nur persönliche Sympathie
+</button>
+
+</div>
+</div>
+
+
+<div class="card">
+<h2>2. Arbeitsplätze gleichmäßig auslasten</h2>
+
+<p>
+Ein Vorarbeiter muss darauf achten, dass die Arbeit sinnvoll verteilt wird.
+Ein Arbeitsplatz sollte nicht überlastet sein, während ein anderer
+Mitarbeiter keine sinnvolle Aufgabe hat.
+</p>
+
+<p>
+Ziel ist ein gleichmäßiger und effizienter Arbeitsfluss.
+</p>
+
+<button onclick="showQuiz(this)">
+Mini-Quiz starten
+</button>
+
+<div class="quiz">
+
+<p><strong>Was ist das Ziel einer guten Verteilung?</strong></p>
+
+<button class="answer" onclick="answer(this,true)">
+Ein gleichmäßiger Arbeitsfluss
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Einen Mitarbeiter möglichst stark belasten
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Nur die schnellsten Mitarbeiter einsetzen
+</button>
+
+</div>
+</div>
+
+
+<div class="card">
+<h2>3. Neue Mitarbeiter systematisch einarbeiten</h2>
+
+<p>
+Neue Mitarbeiter benötigen klare Erklärungen, praktische Anleitung und
+regelmäßige Kontrolle.
+</p>
+
+<p>
+Der Vorarbeiter beobachtet die Entwicklung und erhöht die Anforderungen
+schrittweise.
+</p>
+
+<button onclick="showQuiz(this)">
+Mini-Quiz starten
+</button>
+
+<div class="quiz">
+
+<p><strong>Was gehört zu einer guten Einarbeitung?</strong></p>
+
+<button class="answer" onclick="answer(this,true)">
+Erklären, zeigen, üben und kontrollieren
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Einmal erklären und danach nicht mehr kontrollieren
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Den neuen Mitarbeiter sofort mit den schwierigsten Aufgaben allein lassen
+</button>
+
+</div>
+</div>
+
+
+<div class="card">
+<h2>4. Qualität kontrollieren</h2>
+
+<p>
+Der Vorarbeiter darf nicht einfach davon ausgehen, dass alles richtig läuft.
+Qualität muss regelmäßig kontrolliert werden.
+</p>
+
+<p>
+Fehler werden früh erkannt, sachlich angesprochen und korrigiert.
+Wiederkehrende Fehler werden analysiert.
+</p>
+
+<button onclick="showQuiz(this)">
+Mini-Quiz starten
+</button>
+
+<div class="quiz">
+
+<p><strong>Was bedeutet Qualitätskontrolle?</strong></p>
+
+<button class="answer" onclick="answer(this,true)">
+Arbeit prüfen und Fehler frühzeitig korrigieren
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Nur am Ende des Tages einmal schauen
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Darauf vertrauen, dass schon alles stimmt
+</button>
+
+</div>
+</div>
+
+
+<div class="card">
+<h2>5. Aufträge richtig zuordnen</h2>
+
+<p>
+Aufträge müssen passend zum Mitarbeiter verteilt werden.
+Dabei spielen Auftragsschwierigkeit, Größe, Erfahrung und Lernstand eine Rolle.
+</p>
+
+<p>
+Ein schwieriger Auftrag ist nicht automatisch für den schnellsten Mitarbeiter
+geeignet.
+</p>
+
+<button onclick="showQuiz(this)">
+Mini-Quiz starten
+</button>
+
+<div class="quiz">
+
+<p><strong>Was ist bei der Auftragsverteilung wichtig?</strong></p>
+
+<button class="answer" onclick="answer(this,true)">
+Auftrag und Mitarbeiter müssen zusammenpassen
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Immer denselben Mitarbeiter einsetzen
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Nur nach Sympathie verteilen
+</button>
+
+</div>
+</div>
+
+
+<div class="card">
+<h2>6. Materialversorgung</h2>
+
+<p>
+Der Vorarbeiter muss darauf achten, dass ausreichend Verpackungs- und
+Arbeitsmaterial vorhanden ist.
+</p>
+
+<p>
+Dazu gehören Gruppenbestand, Arbeitsplatzbestand und Verbrauchsmaterialien.
+Engpässe müssen früh erkannt werden.
+</p>
+
+<button onclick="showQuiz(this)">
+Mini-Quiz starten
+</button>
+
+<div class="quiz">
+
+<p><strong>Was ist bei Materialmangel richtig?</strong></p>
+
+<button class="answer" onclick="answer(this,true)">
+Frühzeitig erkennen und Nachschub organisieren
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Warten, bis die Arbeit komplett stillsteht
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Den Mitarbeitern die Schuld geben
+</button>
+
+</div>
+</div>
+
+
+<div class="card">
+<h2>7. Servicekräfte richtig koordinieren</h2>
+
+<p>
+Servicekräfte unterstützen unter anderem bei Materialversorgung,
+Ersatzware, internen Transporten und der Vorbereitung von Paletten.
+</p>
+
+<p>
+Der Vorarbeiter setzt Prioritäten und gibt klare Aufgaben.
+</p>
+
+<button onclick="showQuiz(this)">
+Mini-Quiz starten
+</button>
+
+<div class="quiz">
+
+<p><strong>Was sollte ein Vorarbeiter bei Servicekräften tun?</strong></p>
+
+<button class="answer" onclick="answer(this,true)">
+Aufgaben klar priorisieren und koordinieren
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Alles gleichzeitig und ohne Priorität auftragen
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Keine Aufgaben erklären
+</button>
+
+</div>
+</div>
+
+
+<div class="card">
+<h2>8. Ersatzware und Beschädigungen</h2>
+
+<p>
+Wenn Ware beschädigt ist oder fehlt, soll der Mitarbeiter nicht unnötig
+seinen Arbeitsplatz verlassen.
+</p>
+
+<p>
+Der Vorarbeiter oder die zuständige Servicekraft organisiert die notwendige
+Ersatzware.
+</p>
+
+<button onclick="showQuiz(this)">
+Mini-Quiz starten
+</button>
+
+<div class="quiz">
+
+<p><strong>Wer sollte Ersatzware organisieren?</strong></p>
+
+<button class="answer" onclick="answer(this,true)">
+Vorarbeiter bzw. zuständige Servicekraft
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Immer der Mitarbeiter selbst
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Niemand
+</button>
+
+</div>
+</div>
+
+
+<div class="card">
+<h2>9. Fertige Pakete und Versand</h2>
+
+<p>
+Fertige Pakete müssen korrekt gesammelt und nach Versanddienstleister
+sortiert werden.
+</p>
+
+<p>
+Unterschiedliche Carrier dürfen nicht unnötig vermischt werden.
+Die vorbereiteten Paletten müssen anschließend korrekt an die
+Wechselbrücken bzw. den Verladebereich übergeben werden.
+</p>
+
+<button onclick="showQuiz(this)">
+Mini-Quiz starten
+</button>
+
+<div class="quiz">
+
+<p><strong>Was ist bei fertigen Paketen wichtig?</strong></p>
+
+<button class="answer" onclick="answer(this,true)">
+Richtig nach Carrier sortieren und sauber übergeben
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Alle Pakete beliebig mischen
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Paletten ohne Kennzeichnung stehen lassen
+</button>
+
+</div>
+</div>
+
+
+<div class="card">
+<h2>10. Qualität Gate Verpackung</h2>
+
+<p>
+Vor der Übergabe an den nächsten Prozess muss kontrolliert werden,
+ob die Ware richtig verpackt, vollständig und korrekt zugeordnet ist.
+</p>
+
+<p>
+Besondere Aufmerksamkeit gilt beschädigten Waren, Glasbruch und
+wiederkehrenden Fehlern.
+</p>
+
+<button onclick="showQuiz(this)">
+Mini-Quiz starten
+</button>
+
+<div class="quiz">
+
+<p><strong>Was ist das Ziel des Quality Gates?</strong></p>
+
+<button class="answer" onclick="answer(this,true)">
+Fehler erkennen und nur kontrollierte Ware weitergeben
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Möglichst schnell ohne Kontrolle weitergeben
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Fehler einfach weitergeben
+</button>
+
+</div>
+</div>
+
+
+<div class="card">
+<h2>11. Dokumentation</h2>
+
+<p>
+Besonders bei neuen Mitarbeitern sollten Aufgaben, Auftragstypen,
+Fehler, Auffälligkeiten und Entwicklung dokumentiert werden.
+</p>
+
+<p>
+So kann nachvollzogen werden, wie sich Leistung und Qualität entwickeln
+und wo weitere Unterstützung notwendig ist.
+</p>
+
+<button onclick="showQuiz(this)">
+Mini-Quiz starten
+</button>
+
+<div class="quiz">
+
+<p><strong>Warum ist Dokumentation wichtig?</strong></p>
+
+<button class="answer" onclick="answer(this,true)">
+Damit Entwicklung und Auffälligkeiten nachvollziehbar sind
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Nur um Mitarbeiter zu bestrafen
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Sie ist grundsätzlich unnötig
+</button>
+
+</div>
+</div>
+
+
+<div class="card">
+<h2>12. Verantwortung übernehmen</h2>
+
+<p>
+Ein Vorarbeiter ist für seinen Bereich verantwortlich.
+Er muss Probleme erkennen, Maßnahmen einleiten und Themen eskalieren,
+die er selbst nicht lösen kann.
+</p>
+
+<p>
+Verantwortung bedeutet nicht, alles selbst zu machen.
+Verantwortung bedeutet, dafür zu sorgen, dass es erledigt wird.
+</p>
+
+<button onclick="showQuiz(this)">
+Mini-Quiz starten
+</button>
+
+<div class="quiz">
+
+<p><strong>Was bedeutet Verantwortung?</strong></p>
+
+<button class="answer" onclick="answer(this,true)">
+Dafür sorgen, dass Aufgaben und Probleme bearbeitet werden
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Alles selbst machen
+</button>
+
+<button class="answer" onclick="answer(this,false)">
+Probleme ignorieren
+</button>
+
+</div>
+</div>
+
+
+<div class="card">
+<h2>Die 5 Grundregeln von Tag 4</h2>
+
+<ul>
+<li>Der richtige Mitarbeiter für den richtigen Auftrag.</li>
+<li>Neue Mitarbeiter systematisch entwickeln.</li>
+<li>Qualität regelmäßig kontrollieren.</li>
+<li>Material und Arbeitsfluss sicherstellen.</li>
+<li>Probleme erkennen, lösen und sauber eskalieren.</li>
+</ul>
+
+<button onclick="startExam()">
+Tag-4-Test starten
+</button>
+</div>
+
+
+<div id="exam" class="card">
+
+<h2>Tag-4-Test</h2>
+
+<p>
+30 Fragen. Zum Bestehen werden mindestens <strong>80 %</strong> benötigt.
+</p>
+
+<div id="questions"></div>
+
+<button onclick="finishExam()">
+Test auswerten
+</button>
+
+<div id="result" class="result"></div>
+
+</div>
+
+</div>
+
+
+<script>
+
+function showQuiz(button) {
+    const quiz = button.nextElementSibling;
+    quiz.style.display = "block";
+    button.style.display = "none";
+    updateProgress();
+}
+
+function answer(button, correct) {
+
+    const answers = button.parentElement.querySelectorAll(".answer");
+
+    answers.forEach(function(a) {
+        a.disabled = true;
+    });
+
+    if (correct) {
+        button.classList.add("correct");
+    } else {
+        button.classList.add("wrong");
+
+        answers.forEach(function(a) {
+            const code = a.getAttribute("onclick");
+
+            if (code && code.includes("true")) {
+                a.classList.add("correct");
+            }
+        });
+    }
+
+    updateProgress();
+}
+
+function updateProgress() {
+
+    const quizzes = document.querySelectorAll(".quiz");
+
+    let completed = 0;
+
+    quizzes.forEach(function(quiz) {
+
+        const answers = quiz.querySelectorAll(".answer");
+
+        let finished = false;
+
+        answers.forEach(function(button) {
+            if (button.disabled) {
+                finished = true;
+            }
+        });
+
+        if (finished) {
+            completed++;
+        }
+    });
+
+    const percent = Math.round(
+        (completed / quizzes.length) * 100
+    );
+
+    document.getElementById("progressBar").style.width =
+        percent + "%";
+
+    document.getElementById("progressText").innerText =
+        percent + " % abgeschlossen";
+}
+
+
+const examQuestions = [
+
+["Was sollte bei der Mitarbeitereinteilung berücksichtigt werden?",
+["Qualifikation, Erfahrung und Auftragsanforderung","Nur Sympathie","Nur Alter","Nur wer zuerst kommt"]],
+
+["Was ist das Ziel einer guten Arbeitsverteilung?",
+["Gleichmäßiger Arbeitsfluss","Ein Mitarbeiter arbeitet alles","Möglichst viel Stress","Keine Kontrolle"]],
+
+["Was gehört zu einer guten Einarbeitung?",
+["Erklären, zeigen, üben und kontrollieren","Einmal erklären","Sofort schwierigste Aufgaben","Keine Kontrolle"]],
+
+["Warum muss Qualität kontrolliert werden?",
+["Fehler früh erkennen und korrigieren","Um Mitarbeiter zu ärgern","Kontrolle ist unnötig","Nur für neue Mitarbeiter"]],
+
+["Was ist bei der Auftragsverteilung wichtig?",
+["Auftrag und Mitarbeiter müssen zusammenpassen","Immer derselbe Mitarbeiter","Nur Sympathie","Nur Geschwindigkeit"]],
+
+["Was sollte bei Materialengpässen passieren?",
+["Frühzeitig Nachschub organisieren","Warten","Ignorieren","Mitarbeiter beschuldigen"]],
+
+["Wie werden Servicekräfte sinnvoll eingesetzt?",
+["Aufgaben klar priorisieren und koordinieren","Alles gleichzeitig","Ohne Anweisung","Gar nicht"]],
+
+["Wer organisiert normalerweise Ersatzware?",
+["Vorarbeiter bzw. zuständige Servicekraft","Immer der Packer","Niemand","Der Kunde"]],
+
+["Wie sollen fertige Pakete sortiert werden?",
+["Nach dem richtigen Carrier","Beliebig","Nach Größe allein","Gar nicht"]],
+
+["Was ist das Ziel eines Quality Gates?",
+["Fehler erkennen und kontrollierte Ware weitergeben","Kontrolle vermeiden","Schneller weitergeben","Fehler verstecken"]],
+
+["Warum ist Dokumentation wichtig?",
+["Entwicklung und Auffälligkeiten nachvollziehen","Mitarbeiter bloßstellen","Zeit verschwenden","Gerüchte sammeln"]],
+
+["Was bedeutet Verantwortung als Vorarbeiter?",
+["Dafür sorgen, dass Aufgaben erledigt werden","Alles selbst machen","Probleme ignorieren","Andere verantwortlich machen"]],
+
+["Was ist bei einem neuen Mitarbeiter sinnvoll?",
+["Mit einfachen Aufgaben beginnen","Sofort schwierigste Aufträge","Keine Erklärung","Keine Kontrolle"]],
+
+["Wann kann die Aufgabenschwierigkeit erhöht werden?",
+["Wenn der Mitarbeiter sicherer wird","Sofort","Nie","Nur auf Wunsch"]],
+
+["Was sollte ein Vorarbeiter bei wiederkehrenden Fehlern tun?",
+["Ursache analysieren und korrigieren","Fehler ignorieren","Nur schimpfen","Gerüchte verbreiten"]],
+
+["Was gehört zur Materialkontrolle?",
+["Bestände und Verbrauch beobachten","Nur einmal im Monat schauen","Material ignorieren","Nur Mitarbeiter fragen"]],
+
+["Was ist bei der Arbeitsplatzversorgung wichtig?",
+["Material rechtzeitig bereitstellen","Warten bis alles leer ist","Mitarbeiter laufen lassen","Keine Kontrolle"]],
+
+["Was sollte bei Glasbruch passieren?",
+["Sofort sichern, beseitigen und Vorgang kontrollieren","Ignorieren","Weiterarbeiten","Verstecken"]],
+
+["Was ist bei beschädigter Ware wichtig?",
+["Ursache erkennen und Ersatz organisieren","Einfach weitergeben","Ignorieren","Mitarbeiter beschuldigen"]],
+
+["Was sollte bei Paletten für den Versand stimmen?",
+["Carrier und Zuordnung","Nur Gewicht","Nur Farbe","Nichts"]],
+
+["Was bedeutet sauberer Prozess?",
+["Auftrag kontrolliert und vollständig weitergeben","Offene Schritte lassen","Fehler weitergeben","Systembuchungen vergessen"]],
+
+["Was ist bei Rückware wichtig?",
+["Vorgesehene Lager- oder Rückführungsprozesse einhalten","Irgendwo abstellen","Verstecken","Mitarbeiter entscheiden lassen"]],
+
+["Was soll ein Vorarbeiter bei Problemen zuerst tun?",
+["Situation prüfen und passende Maßnahme einleiten","Sofort Schuldigen suchen","Ignorieren","Laut werden"]],
+
+["Wann sollte ein Problem eskaliert werden?",
+["Wenn es selbst nicht gelöst werden kann","Immer","Nie","Nur wenn jemand fragt"]],
+
+["Was ist bei der Personaleinteilung falsch?",
+["Nur nach persönlicher Sympathie entscheiden","Qualifikation beachten","Erfahrung beachten","Auftragsschwierigkeit beachten"]],
+
+["Warum werden neue Mitarbeiter dokumentiert?",
+["Um Lernfortschritt und Unterstützungsbedarf zu erkennen","Um sie bloßzustellen","Nur für Statistiken","Es gibt keinen Grund"]],
+
+["Was ist bei Qualität wichtiger?",
+["Richtig statt nur schnell","Nur Geschwindigkeit","Nur Menge","Nur persönliche Meinung"]],
+
+["Was ist eine gute Führungsaufgabe im operativen Bereich?",
+["Koordinieren, kontrollieren und unterstützen","Nur Befehle geben","Nur zuschauen","Alles selbst erledigen"]],
+
+["Was ist das Ziel einer guten Schichtsteuerung?",
+["Stabiler Ablauf, Qualität und Leistung","Möglichst viel Chaos","Keine Kommunikation","Keine Kontrolle"]],
+
+["Welcher Grundsatz passt zu Tag 4?",
+["Richtiger Auftrag – richtiger Mitarbeiter – richtige Qualität","Schnell um jeden Preis","Kontrolle vermeiden","Probleme weitergeben"]]
+
+];
+
+
+function startExam() {
+
+    document.getElementById("exam").style.display = "block";
+
+    const container = document.getElementById("questions");
+
+    container.innerHTML = "";
+
+    examQuestions.forEach(function(question, index) {
+
+        const div = document.createElement("div");
+
+        div.className = "question";
+
+        const title = document.createElement("p");
+
+        title.innerHTML =
+            "<strong>" +
+            (index + 1) +
+            ". " +
+            question[0] +
+            "</strong>";
+
+        div.appendChild(title);
+
+        question[1].forEach(function(answerText, answerIndex) {
+
+            const button = document.createElement("button");
+
+            button.className = "answer";
+
+            button.innerText = answerText;
+
+            button.onclick = function() {
+
+                const all =
+                    div.querySelectorAll(".answer");
+
+                all.forEach(function(a) {
+                    a.disabled = true;
+                });
+
+                button.dataset.selected = answerIndex;
+
+                if (answerIndex === 0) {
+                    button.classList.add("correct");
+                } else {
+                    button.classList.add("wrong");
+
+                    all[0].classList.add("correct");
+                }
+            };
+
+            div.appendChild(button);
+        });
+
+        container.appendChild(div);
+    });
+
+    document.getElementById("exam").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+
+function finishExam() {
+
+    const questionDivs =
+        document.querySelectorAll(".question");
+
+    let correctAnswers = 0;
+    let answered = 0;
+
+    questionDivs.forEach(function(div) {
+
+        const answers =
+            div.querySelectorAll(".answer");
+
+        let selected = null;
+
+        answers.forEach(function(button) {
+
+            if (button.dataset.selected !== undefined) {
+                selected = parseInt(button.dataset.selected);
+            }
+        });
+
+        if (selected !== null) {
+
+            answered++;
+
+            if (selected === 0) {
+                correctAnswers++;
+            }
+        }
+    });
+
+    if (answered < examQuestions.length) {
+
+        document.getElementById("result").innerText =
+            "Bitte beantworte alle 30 Fragen.";
+
+        return;
+    }
+
+    const percent = Math.round(
+        (correctAnswers / examQuestions.length) * 100
+    );
+
+    if (percent >= 80) {
+
+        document.getElementById("result").innerText =
+            "BESTANDEN! " +
+            correctAnswers +
+            " von " +
+            examQuestions.length +
+            " richtig (" +
+            percent +
+            " %).";
+
+    } else {
+
+        document.getElementById("result").innerText =
+            "NICHT BESTANDEN. " +
+            correctAnswers +
+            " von " +
+            examQuestions.length +
+            " richtig (" +
+            percent +
+            " %). Mindestens 80 % werden benötigt.";
+    }
+}
+
+</script>
+
+</body>
+</html>
