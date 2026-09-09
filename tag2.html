@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Flaschenland Akademie – Tag 2</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  color: #1f2937;
+}
+
+header {
+  background: #0f172a;
+  color: white;
+  padding: 22px 16px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+header p {
+  margin: 8px 0 0;
+  color: #cbd5e1;
+}
+
+.container {
+  max-width: 850px;
+  margin: auto;
+  padding: 16px;
+}
+
+.progress-box {
+  background: white;
+  border-radius: 14px;
+  padding: 15px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.progress-text {
+  font-size: 14px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.progress {
+  height: 12px;
+  background: #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #16a34a;
+  transition: width 0.3s;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+  margin-top: 0;
+  color: #0f172a;
+}
+
+.card h3 {
+  color: #334155;
+}
+
+.card p,
+.card li {
+  line-height: 1.6;
+}
+
+.example {
+  background: #f1f5f9;
+  border-left: 5px solid #334155;
+  padding: 12px;
+  margin: 14px 0;
+  border-radius: 8px;
+}
+
+.good {
+  border-left-color: #16a34a;
+}
+
+.bad {
+  border-left-color: #dc2626;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: #0f172a;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.quiz {
+  margin-top: 18px;
+  padding-top: 15px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.quiz button {
+  background: #e2e8f0;
+  color: #0f172a;
+  text-align: left;
+}
+
+.quiz button.correct {
+  background: #bbf7d0;
+  color: #166534;
+}
+
+.quiz button.wrong {
+  background: #fecaca;
+  color: #991b1b;
+}
+
+.hidden {
+  display: none;
+}
+
+.exam-question {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 18px;
+  margin-top: 18px;
+}
+
+.exam-question button {
+  background: #e2e8f0;
+  color: #0f172a;
+  text-align: left;
+}
+
+.exam-question button.selected {
+  background: #cbd5e1;
+}
+
+.result {
+  padding: 20px;
+  border-radius: 14px;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.success {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.failure {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.start-button {
+  background: #16a34a;
+}
+
+.back-button {
+  background: #475569;
+}
+
+.small {
+  font-size: 14px;
+  color: #64748b;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Flaschenland Akademie</h1>
+  <p>Tag 2 – Kommunikation & Mitarbeiterführung</p>
+</header>
+
+<div class="container">
+
+<div class="progress-box">
+  <div class="progress-text" id="progressText">
+    Fortschritt: 0%
+  </div>
+
+  <div class="progress">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+</div>
+
+<div class="card">
+  <h2>🎯 Lernziel Tag 2</h2>
+
+  <p>
+    Ein guter Vorarbeiter führt nicht durch Lautstärke oder Einschüchterung,
+    sondern durch klare Kommunikation, Respekt und konsequentes Handeln.
+  </p>
+
+  <p>
+    Nach diesem Training sollst du in der Lage sein:
+  </p>
+
+  <ul>
+    <li>klare Arbeitsanweisungen zu geben</li>
+    <li>angemessen mit Mitarbeitern zu sprechen</li>
+    <li>Kritik sachlich anzusprechen</li>
+    <li>Konflikte frühzeitig zu erkennen</li>
+    <li>auch unter Stress ruhig zu bleiben</li>
+    <li>Grenzen gegenüber Mitarbeitern klar zu setzen</li>
+    <li>respektloses Verhalten konsequent zu stoppen</li>
+  </ul>
+</div>
+
+
+<!-- MODUL 1 -->
+
+<div class="card">
+<h2>1. Kommunikation beginnt mit Respekt</h2>
+
+<p>
+Mitarbeiterführung beginnt nicht mit der Frage:
+„Wer hat hier das Sagen?“
+</p>
+
+<p>
+Sie beginnt mit der Frage:
+„Wie erreiche ich, dass die Aufgabe richtig erledigt wird?“
+</p>
+
+<p>
+Ein Vorarbeiter hat eine Führungsfunktion. Diese Funktion gibt ihm
+Verantwortung und Entscheidungsbefugnisse – aber keinen Freibrief für
+Beleidigungen, Anschreien oder Demütigungen.
+</p>
+
+<div class="example bad">
+<strong>❌ Falsch:</strong><br>
+„Bist du eigentlich zu blöd, diese Aufgabe richtig zu machen?“
+</div>
+
+<div class="example good">
+<strong>✅ Richtig:</strong><br>
+„Die Aufgabe wurde falsch ausgeführt. Ich zeige dir kurz,
+wie sie richtig gemacht wird.“
+</div>
+
+<div class="quiz">
+<strong>Frage:</strong>
+<p>Wie sollte ein Vorarbeiter grundsätzlich mit Mitarbeitern sprechen?</p>
+
+<button onclick="answer(this,true)">
+Respektvoll, klar und sachlich
+</button>
+
+<button onclick="answer(this,false)">
+Laut und einschüchternd
+</button>
+
+<button onclick="answer(this,false)">
+Abwertend, damit der Mitarbeiter Respekt bekommt
+</button>
+</div>
+</div>
+
+
+<!-- MODUL 2 -->
+
+<div class="card">
+<h2>2. Tonfall und Körpersprache</h2>
+
+<p>
+Nicht nur die Worte entscheiden darüber, wie eine Aussage verstanden wird.
+Auch Tonfall, Lautstärke, Gesichtsausdruck und Körpersprache spielen eine
+große Rolle.
+</p>
+
+<ul>
+<li>ruhige Stimme</li>
+<li>direkter, aber angemessener Blickkontakt</li>
+<li>aufrechte Körperhaltung</li>
+<li>keine drohenden Gesten</li>
+<li>keine persönliche Abwertung</li>
+</ul>
+
+<div class="example bad">
+<strong>❌ Problematisch:</strong><br>
+Mit verschränkten Armen vor dem Mitarbeiter stehen und laut sagen:
+„Das habe ich dir doch schon hundertmal gesagt!“
+</div>
+
+<div class="example good">
+<strong>✅ Besser:</strong><br>
+„Wir hatten das bereits besprochen. Lass uns kurz klären,
+wo das Problem liegt.“
+</div>
+
+<div class="quiz">
+<strong>Frage:</strong>
+<p>Was gehört zu professioneller Körpersprache?</p>
+
+<button onclick="answer(this,true)">
+Ruhige Haltung und angemessener Blickkontakt
+</button>
+
+<button onclick="answer(this,false)">
+Drohend auf den Mitarbeiter zugehen
+</button>
+
+<button onclick="answer(this,false)">
+Mit dem Finger auf den Mitarbeiter zeigen
+</button>
+</div>
+</div>
+
+
+<!-- MODUL 3 -->
+
+<div class="card">
+<h2>3. Klare Arbeitsanweisungen</h2>
+
+<p>
+Eine Arbeitsanweisung muss so klar sein, dass der Mitarbeiter weiß,
+was von ihm erwartet wird.
+</p>
+
+<h3>Eine gute Anweisung beantwortet:</h3>
+
+<ul>
+<li><strong>Was?</strong> Welche Aufgabe?</li>
+<li><strong>Wer?</strong> Wer führt sie aus?</li>
+<li><strong>Wann?</strong> Bis wann oder zu welchem Zeitpunkt?</li>
+<li><strong>Wo?</strong> An welchem Arbeitsplatz?</li>
+<li><strong>Wie?</strong> Nach welchem Ablauf oder Standard?</li>
+<li><strong>Warum?</strong> Falls das Verständnis dadurch verbessert wird.</li>
+</ul>
+
+<div class="example bad">
+<strong>❌ Unklar:</strong><br>
+„Mach das da hinten fertig.“
+</div>
+
+<div class="example good">
+<strong>✅ Klar:</strong><br>
+„Bitte bearbeite diese Palette an Packplatz 4 nach dem
+vorgegebenen Verpackungsstandard. Danach meldest du dich bei mir.“
+</div>
+
+<div class="quiz">
+<strong>Frage:</strong>
+<p>Was ist eine gute Arbeitsanweisung?</p>
+
+<button onclick="answer(this,true)">
+Klar, konkret und nachvollziehbar
+</button>
+
+<button onclick="answer(this,false)">
+Kurz und möglichst ungenau
+</button>
+
+<button onclick="answer(this,false)">
+So formuliert, dass der Mitarbeiter selbst raten muss
+</button>
+</div>
+</div>
+
+
+<!-- MODUL 4 -->
+
+<div class="card">
+<h2>4. Kontrolle statt Misstrauen</h2>
+
+<p>
+Ein Vorarbeiter muss Aufgaben kontrollieren. Kontrolle bedeutet jedoch
+nicht automatisch Misstrauen.
+</p>
+
+<p>
+Kontrolle dient dazu, Fehler frühzeitig zu erkennen und Qualität
+sicherzustellen.
+</p>
+
+<div class="example">
+<strong>Beispiel:</strong><br>
+Ein neuer Mitarbeiter verpackt zum ersten Mal einen größeren Auftrag.
+Der Vorarbeiter schaut sich die ersten Packstücke an und gibt direkt
+Feedback.
+</div>
+
+<p>
+So kann ein Fehler korrigiert werden, bevor eine komplette Palette
+falsch verpackt wurde.
+</p>
+
+<div class="quiz">
+<strong>Frage:</strong>
+<p>Warum kontrolliert ein Vorarbeiter die Arbeit?</p>
+
+<button onclick="answer(this,true)">
+Um Qualität und korrekte Abläufe sicherzustellen
+</button>
+
+<button onclick="answer(this,false)">
+Um Mitarbeiter ständig unter Druck zu setzen
+</button>
+
+<button onclick="answer(this,false)">
+Nur um Fehler zu suchen
+</button>
+</div>
+</div>
+
+
+<!-- MODUL 5 -->
+
+<div class="card">
+<h2>5. Lob und Anerkennung</h2>
+
+<p>
+Gute Leistung sollte wahrgenommen werden.
+Anerkennung bedeutet nicht, dass ein Vorarbeiter keine Ansprüche mehr
+stellen darf.
+</p>
+
+<p>
+Ein einfaches, ehrliches Feedback kann Motivation und Zusammenarbeit
+verbessern.
+</p>
+
+<div class="example good">
+<strong>✅ Beispiel:</strong><br>
+„Die Palette ist heute sehr sauber und ordentlich vorbereitet.
+Genau so soll es sein.“
+</div>
+
+<p>
+Lob sollte möglichst konkret sein. Nicht einfach:
+„Gut gemacht.“
+Sondern:
+„Die Verpackung wurde sauber durchgeführt und alle Versandaufkleber
+wurden korrekt angebracht.“
+</p>
+
+<div class="quiz">
+<strong>Frage:</strong>
+<p>Wie sollte Lob möglichst sein?</p>
+
+<button onclick="answer(this,true)">
+Ehrlich und möglichst konkret
+</button>
+
+<button onclick="answer(this,false)">
+Übertrieben und unabhängig von der Leistung
+</button>
+
+<button onclick="answer(this,false)">
+Nur bei besonderen Anlässen
+</button>
+</div>
+</div>
+
+
+<!-- MODUL 6 -->
+
+<div class="card">
+<h2>6. Kritik richtig ansprechen</h2>
+
+<p>
+Fehler müssen angesprochen werden. Entscheidend ist jedoch die Art und
+Weise.
+</p>
+
+<h3>Gute Kritik:</h3>
+
+<ul>
+<li>bezieht sich auf das Verhalten oder die Aufgabe</li>
+<li>ist sachlich</li>
+<li>beschreibt konkret, was falsch war</li>
+<li>zeigt den richtigen Weg</li>
+<li>gibt dem Mitarbeiter die Möglichkeit zu reagieren</li>
+</ul>
+
+<div class="example bad">
+<strong>❌ Persönlicher Angriff:</strong><br>
+„Du bist einfach unzuverlässig.“
+</div>
+
+<div class="example good">
+<strong>✅ Sachliche Kritik:</strong><br>
+„Die Aufgabe wurde heute zum zweiten Mal nicht vollständig
+abgeschlossen. Wir müssen klären, woran das liegt.“
+</div>
+
+<div class="quiz">
+<strong>Frage:</strong>
+<p>Was ist bei Kritik besonders wichtig?</p>
+
+<button onclick="answer(this,true)">
+Das konkrete Verhalten oder die konkrete Leistung ansprechen
+</button>
+
+<button onclick="answer(this,false)">
+Die Persönlichkeit des Mitarbeiters angreifen
+</button>
+
+<button onclick="answer(this,false)">
+Den Mitarbeiter vor allen anderen bloßstellen
+</button>
+</div>
+</div>
+
+
+<!-- MODUL 7 -->
+
+<div class="card">
+<h2>7. Schwierige Mitarbeiter</h2>
+
+<p>
+Manchmal reagiert ein Mitarbeiter nicht wie erwartet.
+Er widerspricht, diskutiert ständig, verweigert eine Aufgabe oder wird
+respektlos.
+</p>
+
+<p>
+Der Vorarbeiter sollte trotzdem professionell bleiben.
+</p>
+
+<h3>Grundprinzip:</h3>
+
+<ol>
+<li>ruhig bleiben</li>
+<li>Situation konkret benennen</li>
+<li>Erwartung klar formulieren</li>
+<li>Mitarbeiter anhören</li>
+<li>Grenzen setzen</li>
+<li>bei Bedarf eskalieren</li>
+</ol>
+
+<div class="example">
+<strong>Beispiel:</strong><br>
+„Ich höre mir gerne an, warum du mit der Aufgabe nicht einverstanden
+bist. Die Anweisung bleibt zunächst bestehen. Wenn es ein Problem gibt,
+klären wir es gemeinsam.“
+</div>
+
+<div class="quiz">
+<strong>Frage:</strong>
+<p>Wie sollte ein Vorarbeiter auf respektloses Verhalten reagieren?</p>
+
+<button onclick="answer(this,true)">
+Ruhig bleiben, Grenze setzen und sachlich weiterführen
+</button>
+
+<button onclick="answer(this,false)">
+Ebenfalls beleidigen
+</button>
+
+<button onclick="answer(this,false)">
+Sofort losschreien
+</button>
+</div>
+</div>
+
+
+<!-- MODUL 8 -->
+
+<div class="card">
+<h2>8. Anschreien, Beleidigungen und Demütigungen</h2>
+
+<p>
+Es gibt einen klaren Unterschied zwischen konsequenter Führung und
+aggressivem Verhalten.
+</p>
+
+<p>
+Ein Vorarbeiter darf Anforderungen stellen, Aufgaben verteilen,
+Leistung kontrollieren und Fehler korrigieren.
+</p>
+
+<p>
+Nicht akzeptabel sind jedoch:
+</p>
+
+<ul>
+<li>Beleidigungen</li>
+<li>persönliche Angriffe</li>
+<li>Bedrohungen</li>
+<li>öffentliche Demütigungen</li>
+<li>Schreien als Führungsmethode</li>
+<li>Abwertungen aufgrund von Herkunft, Sprache oder Persönlichkeit</li>
+</ul>
+
+<div class="example bad">
+<strong>❌ Falsch:</strong><br>
+„Wenn du das nicht sofort machst, kannst du dich warm anziehen!“
+</div>
+
+<div class="example good">
+<strong>✅ Richtig:</strong><br>
+„Diese Aufgabe gehört zu deinem Arbeitsbereich und muss jetzt erledigt
+werden. Wenn es ein Problem gibt, sag mir bitte konkret welches.“
+</div>
+
+<div class="quiz">
+<strong>Frage:</strong>
+<p>Was ist keine professionelle Führungsmethode?</p>
+
+<button onclick="answer(this,true)">
+Mitarbeiter durch Beleidigungen und Einschüchterung zu führen
+</button>
+
+<button onclick="answer(this,false)">
+Klare Aufgaben zu verteilen
+</button>
+
+<button onclick="answer(this,false)">
+Leistung zu kontrollieren
+</button>
+</div>
+</div>
+
+
+<!-- MODUL 9 -->
+
+<div class="card">
+<h2>9. Selbstkontrolle unter Stress</h2>
+
+<p>
+Gerade in stressigen Situationen zeigt sich gute Führung.
+Wenn viel Arbeit anfällt, ein Auftrag dringend ist oder mehrere Probleme
+gleichzeitig auftreten, muss der Vorarbeiter trotzdem handlungsfähig
+bleiben.
+</p>
+
+<h3>Hilfreiche Vorgehensweise:</h3>
+
+<ul>
+<li>kurz durchatmen</li>
+<li>Situation bewerten</li>
+<li>Priorität bestimmen</li>
+<li>klare Anweisung geben</li>
+<li>Aufgabe kontrollieren</li>
+</ul>
+
+<div class="example">
+<strong>Merksatz:</strong><br>
+„Stress erklärt mein Verhalten – er entschuldigt kein respektloses
+Verhalten.“
+</div>
+
+<div class="quiz">
+<strong>Frage:</strong>
+<p>Was sollte ein Vorarbeiter bei starkem Stress tun?</p>
+
+<button onclick="answer(this,true)">
+Ruhig bleiben, priorisieren und klar kommunizieren
+</button>
+
+<button onclick="answer(this,false)">
+Seinen Stress an Mitarbeitern auslassen
+</button>
+
+<button onclick="answer(this,false)">
+Lauter werden, damit alle schneller arbeiten
+</button>
+</div>
+</div>
+
+
+<!-- MODUL 10 -->
+
+<div class="card">
+<h2>10. Konflikte frühzeitig lösen</h2>
+
+<p>
+Ein kleiner Konflikt kann schnell größer werden, wenn niemand reagiert.
+</p>
+
+<p>
+Der Vorarbeiter sollte Konflikte nicht ignorieren, aber auch nicht
+unnötig dramatisieren.
+</p>
+
+<h3>Gute Vorgehensweise:</h3>
+
+<ul>
+<li>Situation beobachten</li>
+<li>beide Seiten anhören</li>
+<li>Fakten von persönlichen Aussagen trennen</li>
+<li>gemeinsame Lösung suchen</li>
+<li>klare Vereinbarung treffen</li>
+<li>bei wiederholtem oder schwerem Fehlverhalten eskalieren</li>
+</ul>
+
+<div class="quiz">
+<strong>Frage:</strong>
+<p>Was sollte ein Vorarbeiter bei einem Konflikt zuerst tun?</p>
+
+<button onclick="answer(this,true)">
+Die Situation sachlich klären und die Beteiligten anhören
+</button>
+
+<button onclick="answer(this,false)">
+Sofort einen Schuldigen bestimmen
+</button>
+
+<button onclick="answer(this,false)">
+Den Konflikt vor dem gesamten Team austragen
+</button>
+</div>
+</div>
+
+
+<!-- MODUL 11 -->
+
+<div class="card">
+<h2>11. Führung unter Vorarbeitern</h2>
+
+<p>
+Vorarbeiter müssen als Führungsteam zusammenarbeiten.
+Unterschiedliche Meinungen sind normal.
+</p>
+
+<p>
+Diese Konflikte dürfen jedoch nicht vor Mitarbeitern ausgetragen werden.
+</p>
+
+<div class="example bad">
+<strong>❌ Falsch:</strong><br>
+Vorarbeiter A sagt vor Mitarbeitern:
+„Der hat sowieso keine Ahnung.“
+</div>
+
+<div class="example good">
+<strong>✅ Richtig:</strong><br>
+Unterschiedliche Meinung intern klären und anschließend gemeinsam eine
+klare Linie gegenüber dem Team vertreten.
+</div>
+
+<p>
+Mitarbeiter dürfen nicht dazu benutzt werden, persönliche Machtkämpfe
+zwischen Führungskräften auszutragen.
+</p>
+
+<div class="quiz">
+<strong>Frage:</strong>
+<p>Wie sollen Vorarbeiter mit internen Meinungsverschiedenheiten umgehen?</p>
+
+<button onclick="answer(this,true)">
+Intern und sachlich klären
+</button>
+
+<button onclick="answer(this,false)">
+Vor den Mitarbeitern austragen
+</button>
+
+<button onclick="answer(this,false)">
+Mitarbeiter gegen den anderen Vorarbeiter aufbringen
+</button>
+</div>
+</div>
+
+
+<!-- ZUSAMMENFASSUNG -->
+
+<div class="card">
+<h2>📌 Die wichtigsten Regeln aus Tag 2</h2>
+
+<ol>
+<li>Respektvoll kommunizieren.</li>
+<li>Klar und eindeutig anweisen.</li>
+<li>Leistung kontrollieren.</li>
+<li>Fehler sachlich korrigieren.</li>
+<li>Gute Leistung anerkennen.</li>
+<li>Keine Beleidigungen.</li>
+<li>Kein Anschreien als Führungsmethode.</li>
+<li>Keine öffentliche Demütigung.</li>
+<li>Auch unter Stress professionell bleiben.</li>
+<li>Konflikte sachlich lösen.</li>
+<li>Führungskonflikte nicht vor Mitarbeitern austragen.</li>
+</ol>
+
+<button class="start-button" onclick="startExam()">
+➡️ Tag-2-Test starten
+</button>
+</div>
+
+
+<!-- PRÜFUNG -->
+
+<div id="exam" class="card hidden">
+
+<h2>📝 Tag-2-Test</h2>
+
+<p>
+Beantworte alle Fragen. Zum Bestehen werden mindestens
+<strong>80 %</strong> benötigt.
+</p>
+
+<div id="questions"></div>
+
+<button onclick="finishExam()">
+Test auswerten
+</button>
+
+<div id="result"></div>
+
+</div>
+
+</div>
+
+
+<script>
+
+let miniCorrect = 0;
+let miniAnswered = 0;
+
+function answer(button, correct) {
+
+  const parent = button.parentElement;
+
+  if (parent.dataset.answered === "true") {
+    return;
+  }
+
+  parent.dataset.answered = "true";
+
+  const buttons = parent.querySelectorAll("button");
+
+  buttons.forEach(btn => {
+    btn.disabled = true;
+  });
+
+  if (correct) {
+    button.classList.add("correct");
+    miniCorrect++;
+  } else {
+    button.classList.add("wrong");
+
+    buttons.forEach(btn => {
+      if (btn.getAttribute("onclick") &&
+          btn.getAttribute("onclick").includes("true")) {
+        btn.classList.add("correct");
+      }
+    });
+  }
+
+  miniAnswered++;
+  updateProgress();
+}
+
+
+const examQuestions = [
+
+{
+q:"Wie sollte ein Vorarbeiter grundsätzlich mit Mitarbeitern sprechen?",
+a:[
+"Respektvoll, klar und sachlich",
+"Laut und einschüchternd",
+"Abwertend"
+],
+correct:0
+},
+
+{
+q:"Was gehört zu professioneller Körpersprache?",
+a:[
+"Ruhige Haltung und angemessener Blickkontakt",
+"Drohend auf den Mitarbeiter zugehen",
+"Mit dem Finger auf den Mitarbeiter zeigen"
+],
+correct:0
+},
+
+{
+q:"Was zeichnet eine gute Arbeitsanweisung aus?",
+a:[
+"Sie ist klar und nachvollziehbar",
+"Der Mitarbeiter muss selbst raten",
+"Sie ist möglichst ungenau"
+],
+correct:0
+},
+
+{
+q:"Warum kontrolliert ein Vorarbeiter die Arbeit?",
+a:[
+"Um Qualität und korrekte Abläufe sicherzustellen",
+"Um Mitarbeiter ständig unter Druck zu setzen",
+"Nur um Fehler zu suchen"
+],
+correct:0
+},
+
+{
+q:"Wie sollte Lob möglichst sein?",
+a:[
+"Ehrlich und konkret",
+"Übertrieben",
+"Nur einmal im Jahr"
+],
+correct:0
+},
+
+{
+q:"Wie sollte Kritik formuliert werden?",
+a:[
+"Sachlich und bezogen auf die konkrete Situation",
+"Als persönlicher Angriff",
+"Vor allen Mitarbeitern"
+],
+correct:0
+},
+
+{
+q:"Was sollte ein Vorarbeiter bei einem schwierigen Mitarbeiter tun?",
+a:[
+"Ruhig bleiben und klare Grenzen setzen",
+"Ebenfalls beleidigen",
+"Sofort losschreien"
+],
+correct:0
+},
+
+{
+q:"Was ist keine professionelle Führungsmethode?",
+a:[
+"Mitarbeiter durch Beleidigungen einzuschüchtern",
+"Klare Aufgaben zu verteilen",
+"Leistung zu kontrollieren"
+],
+correct:0
+},
+
+{
+q:"Was sollte ein Vorarbeiter bei Stress tun?",
+a:[
+"Priorisieren und ruhig kommunizieren",
+"Stress an Mitarbeitern auslassen",
+"Lauter werden"
+],
+correct:0
+},
+
+{
+q:"Wie sollte ein Konflikt zunächst behandelt werden?",
+a:[
+"Sachlich klären und Beteiligte anhören",
+"Sofort einen Schuldigen bestimmen",
+"Vor dem gesamten Team austragen"
+],
+correct:0
+},
+
+{
+q:"Wie sollten Vorarbeiter interne Meinungsverschiedenheiten lösen?",
+a:[
+"Intern und sachlich",
+"Vor Mitarbeitern",
+"Durch persönliche Angriffe"
+],
+correct:0
+},
+
+{
+q:"Was ist bei einer Arbeitsanweisung besonders wichtig?",
+a:[
+"Der Mitarbeiter muss wissen, was von ihm erwartet wird",
+"Der Mitarbeiter soll selbst entscheiden, was gemeint ist",
+"Die Anweisung sollte möglichst kompliziert sein"
+],
+correct:0
+},
+
+{
+q:"Was sollte bei einem Fehler passieren?",
+a:[
+"Fehler sachlich ansprechen und korrigieren",
+"Mitarbeiter beleidigen",
+"Fehler ignorieren"
+],
+correct:0
+},
+
+{
+q:"Was darf ein Vorarbeiter nicht als Führungsmethode einsetzen?",
+a:[
+"Beleidigungen und Einschüchterung",
+"Klare Anweisungen",
+"Kontrolle"
+],
+correct:0
+},
+
+{
+q:"Warum ist Körpersprache wichtig?",
+a:[
+"Weil sie beeinflusst, wie eine Aussage wahrgenommen wird",
+"Weil sie Worte vollständig ersetzt",
+"Weil sie nichts mit Führung zu tun hat"
+],
+correct:0
+},
+
+{
+q:"Was ist bei einem Konflikt wichtig?",
+a:[
+"Fakten von persönlichen Aussagen zu trennen",
+"Gerüchte weiterzugeben",
+"Sofort Partei zu ergreifen"
+],
+correct:0
+},
+
+{
+q:"Was sollte ein Vorarbeiter tun, wenn ein Mitarbeiter eine Anweisung nicht versteht?",
+a:[
+"Die Anweisung erklären und sicherstellen, dass sie verstanden wurde",
+"Den Mitarbeiter anschreien",
+"Die Aufgabe einfach vergessen"
+],
+correct:0
+},
+
+{
+q:"Was bedeutet konsequente Führung?",
+a:[
+"Klare Erwartungen und nachvollziehbare Konsequenzen",
+"Lautstärke",
+"Angst erzeugen"
+],
+correct:0
+},
+
+{
+q:"Was sollte ein Vorarbeiter bei wiederholten Problemen tun?",
+a:[
+"Ursache klären, dokumentieren und bei Bedarf eskalieren",
+"Alles ignorieren",
+"Den Mitarbeiter öffentlich bloßstellen"
+],
+correct:0
+},
+
+{
+q:"Was sollte ein Vorarbeiter niemals tun?",
+a:[
+"Mitarbeiter aufgrund ihrer Herkunft abwerten",
+"Aufgaben verteilen",
+"Qualität kontrollieren"
+],
+correct:0
+},
+
+{
+q:"Was ist ein gutes Feedback?",
+a:[
+"Konkret, sachlich und hilfreich",
+"Unklar und persönlich",
+"Abwertend"
+],
+correct:0
+},
+
+{
+q:"Was ist das Ziel guter Kommunikation?",
+a:[
+"Gemeinsames Verständnis und korrekte Umsetzung",
+"Angst erzeugen",
+"Den Mitarbeiter kleinhalten"
+],
+correct:0
+},
+
+{
+q:"Was sollte bei einem Konflikt vermieden werden?",
+a:[
+"Persönliche Angriffe",
+"Sachliche Klärung",
+"Zuhören"
+],
+correct:0
+},
+
+{
+q:"Was sollte ein Vorarbeiter bei hoher Arbeitsbelastung zuerst tun?",
+a:[
+"Prioritäten setzen",
+"Panik verbreiten",
+"Alle gleichzeitig anschreien"
+],
+correct:0
+},
+
+{
+q:"Warum sollte ein Vorarbeiter Lob konkret formulieren?",
+a:[
+"Damit der Mitarbeiter weiß, was gut war",
+"Damit er keine Kritik mehr geben muss",
+"Damit die Kontrolle entfällt"
+],
+correct:0
+},
+
+{
+q:"Wie sollte ein Mitarbeiter korrigiert werden?",
+a:[
+"Respektvoll und konkret",
+"Vor allen anderen bloßgestellt",
+"Mit persönlichen Beleidigungen"
+],
+correct:0
+},
+
+{
+q:"Was bedeutet professionelle Distanz?",
+a:[
+"Respektvoll bleiben und trotzdem die Führungsrolle wahrnehmen",
+"Keine Kommunikation",
+"Freundschaften erzwingen"
+],
+correct:0
+},
+
+{
+q:"Was sollte ein Vorarbeiter tun, wenn ein Mitarbeiter respektlos wird?",
+a:[
+"Verhalten klar benennen und Grenze setzen",
+"Zurückbeleidigen",
+"Ignorieren, wenn es immer wieder passiert"
+],
+correct:0
+},
+
+{
+q:"Warum sollten Führungskonflikte nicht vor Mitarbeitern ausgetragen werden?",
+a:[
+"Weil dadurch Vertrauen und Führungsautorität beschädigt werden",
+"Weil Mitarbeiter keine Informationen bekommen dürfen",
+"Weil Konflikte grundsätzlich verboten sind"
+],
+correct:0
+},
+
+{
+q:"Was ist bei der Mitarbeiterführung wichtiger als Lautstärke?",
+a:[
+"Klarheit und Konsequenz",
+"Angst",
+"Dominanz"
+],
+correct:0
+}
+
+];
+
+
+let selectedAnswers = [];
+
+function startExam() {
+
+  document.getElementById("exam").classList.remove("hidden");
+
+  document.getElementById("exam").scrollIntoView({
+    behavior:"smooth"
+  });
+
+  renderExam();
+
+  updateProgress();
+}
+
+
+function renderExam() {
+
+  const container = document.getElementById("questions");
+
+  container.innerHTML = "";
+
+  examQuestions.forEach((question,index) => {
+
+    const div = document.createElement("div");
+
+    div.className = "exam-question";
+
+    const title = document.createElement("p");
+
+    title.innerHTML =
+      "<strong>Frage " + (index + 1) + ":</strong> " +
+      question.q;
+
+    div.appendChild(title);
+
+    question.a.forEach((answerText,answerIndex) => {
+
+      const button = document.createElement("button");
+
+      button.textContent = answerText;
+
+      button.onclick = function() {
+
+        selectedAnswers[index] = answerIndex;
+
+        const buttons =
+          div.querySelectorAll("button");
+
+        buttons.forEach(btn => {
+          btn.classList.remove("selected");
+        });
+
+        button.classList.add("selected");
+
+        updateProgress();
+      };
+
+      div.appendChild(button);
+
+    });
+
+    container.appendChild(div);
+
+  });
+
+}
+
+
+function finishExam() {
+
+  if (selectedAnswers.length < examQuestions.length ||
+      selectedAnswers.some(a => a === undefined)) {
+
+    alert(
+      "Bitte beantworte alle " +
+      examQuestions.length +
+      " Fragen."
+    );
+
+    return;
+  }
+
+  let correct = 0;
+
+  examQuestions.forEach((question,index) => {
+
+    if (selectedAnswers[index] === question.correct) {
+      correct++;
+    }
+
+  });
+
+  const percent =
+    Math.round(
+      (correct / examQuestions.length) * 100
+    );
+
+  const result =
+    document.getElementById("result");
+
+  if (percent >= 80) {
+
+    result.className = "result success";
+
+    result.innerHTML =
+      "🎉 Bestanden!<br><br>" +
+      correct + " von " +
+      examQuestions.length +
+      " Fragen richtig.<br>" +
+      percent +
+      "% erreicht.";
+
+    updateProgress(100);
+
+  } else {
+
+    result.className = "result failure";
+
+    result.innerHTML =
+      "❌ Noch nicht bestanden.<br><br>" +
+      correct + " von " +
+      examQuestions.length +
+      " Fragen richtig.<br>" +
+      percent +
+      "% erreicht.<br><br>" +
+      "Du benötigst mindestens 80 %.";
+
+    updateProgress();
+  }
+
+  result.scrollIntoView({
+    behavior:"smooth"
+  });
+}
+
+
+function updateProgress(forcePercent) {
+
+  let percent;
+
+  if (forcePercent !== undefined) {
+
+    percent = forcePercent;
+
+  } else {
+
+    const miniTotal = 11;
+
+    const miniProgress =
+      Math.min(
+        miniAnswered / miniTotal,
+        1
+      ) * 60;
+
+    const examProgress =
+      (selectedAnswers.length /
+      examQuestions.length) * 40;
+
+    percent =
+      Math.round(
+        miniProgress + examProgress
+      );
+  }
+
+  percent = Math.min(100, Math.max(0, percent));
+
+  document.getElementById("progressBar").style.width =
+    percent + "%";
+
+  document.getElementById("progressText").textContent =
+    "Fortschritt: " + percent + "%";
+}
+
+</script>
+
+</body>
+</html>
