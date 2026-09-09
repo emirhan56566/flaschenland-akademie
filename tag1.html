@@ -1,128 +1,166 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tag 1 – Grundlagen der Führung</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flaschenland Akademie – Tag 1</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
+*{box-sizing:border-box}
 
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #f4f6f8;
-      color: #17202a;
-      line-height: 1.6;
-    }
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:#f3f5f7;
+  color:#17202a;
+  line-height:1.6;
+}
 
-    header {
-      background: #14213d;
-      color: white;
-      padding: 24px 20px;
-    }
+header{
+  background:#14213d;
+  color:white;
+  padding:22px 18px;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
 
-    header h1 {
-      margin: 0;
-      font-size: 26px;
-    }
+header h1{
+  margin:0;
+  font-size:22px;
+}
 
-    header p {
-      margin: 6px 0 0;
-      opacity: 0.85;
-    }
+header p{
+  margin:4px 0 0;
+  opacity:.85;
+  font-size:14px;
+}
 
-    main {
-      max-width: 850px;
-      margin: auto;
-      padding: 20px 16px 50px;
-    }
+.progress{
+  height:7px;
+  background:#dfe4e8;
+  margin-top:14px;
+  border-radius:10px;
+  overflow:hidden;
+}
 
-    .back {
-      display: inline-block;
-      margin-bottom: 16px;
-      color: #14213d;
-      text-decoration: none;
-      font-weight: 600;
-    }
+.progressBar{
+  height:100%;
+  width:0%;
+  background:#2a9d8f;
+  transition:.3s;
+}
 
-    .card {
-      background: white;
-      border-radius: 18px;
-      padding: 22px;
-      margin-bottom: 18px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-    }
+main{
+  max-width:850px;
+  margin:auto;
+  padding:20px 15px 60px;
+}
 
-    h2 {
-      color: #14213d;
-      margin-top: 0;
-    }
+.card{
+  background:white;
+  border-radius:18px;
+  padding:22px;
+  margin-bottom:18px;
+  box-shadow:0 3px 14px rgba(0,0,0,.07);
+}
 
-    h3 {
-      color: #14213d;
-    }
+h2{
+  color:#14213d;
+  margin-top:0;
+}
 
-    .important {
-      border-left: 5px solid #2a9d8f;
-      background: #eef8f6;
-    }
+h3{
+  color:#14213d;
+}
 
-    .principle {
-      padding: 12px 0;
-      border-bottom: 1px solid #e5e7eb;
-    }
+.info{
+  background:#eef7f5;
+  border-left:5px solid #2a9d8f;
+  padding:15px;
+  border-radius:10px;
+}
 
-    .principle:last-child {
-      border-bottom: none;
-    }
+.warning{
+  background:#fff5e8;
+  border-left:5px solid #e09f3e;
+  padding:15px;
+  border-radius:10px;
+}
 
-    .number {
-      font-weight: bold;
-      color: #2a9d8f;
-    }
+.scenario{
+  background:#f7f8fa;
+  padding:17px;
+  border-radius:12px;
+  margin-top:15px;
+}
 
-    .scenario {
-      background: #f8f9fa;
-      border-radius: 12px;
-      padding: 16px;
-      margin-top: 12px;
-    }
+.option{
+  display:block;
+  width:100%;
+  text-align:left;
+  padding:14px;
+  margin:8px 0;
+  border:1px solid #d8dde2;
+  border-radius:10px;
+  background:white;
+  font-size:15px;
+}
 
-    .question {
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
+.option:active{
+  transform:scale(.99);
+}
 
-    button {
-      width: 100%;
-      border: none;
-      border-radius: 10px;
-      padding: 13px;
-      margin-top: 8px;
-      background: #14213d;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-    }
+.correct{
+  background:#e8f7f1 !important;
+  border-color:#2a9d8f !important;
+}
 
-    button:hover {
-      opacity: 0.9;
-    }
+.wrong{
+  background:#fdecec !important;
+  border-color:#c0392b !important;
+}
 
-    .result {
-      margin-top: 10px;
-      font-weight: 600;
-    }
+.feedback{
+  font-weight:600;
+  margin-top:10px;
+}
 
-    .finish {
-      background: #2a9d8f;
-      color: white;
-      text-align: center;
-    }
-  </style>
+button.next{
+  width:100%;
+  padding:14px;
+  margin-top:18px;
+  border:0;
+  border-radius:11px;
+  background:#14213d;
+  color:white;
+  font-size:16px;
+  font-weight:600;
+}
+
+button.finish{
+  background:#2a9d8f;
+}
+
+.hidden{
+  display:none;
+}
+
+.score{
+  font-size:24px;
+  font-weight:bold;
+  text-align:center;
+}
+
+.badge{
+  display:inline-block;
+  background:#14213d;
+  color:white;
+  padding:5px 10px;
+  border-radius:20px;
+  font-size:12px;
+}
+</style>
 </head>
 
 <body>
@@ -130,252 +168,1023 @@
 <header>
   <h1>Flaschenland Akademie</h1>
   <p>Trainingstag 1 · Grundlagen der Führung</p>
+
+  <div class="progress">
+    <div class="progressBar" id="progressBar"></div>
+  </div>
 </header>
 
 <main>
 
-  <a class="back" href="index.html">← Zurück zur Akademie</a>
+<!-- START -->
 
-  <section class="card">
-    <h2>🎯 Lernziel</h2>
+<section class="card" id="start">
 
-    <p>
-      Nach diesem Training weißt du, welche Rolle ein Vorarbeiter hat,
-      welche Verantwortung damit verbunden ist und wie professionelle
-      Führung im Arbeitsalltag aussieht.
-    </p>
+<span class="badge">ca. 120 Minuten</span>
 
-    <p>
-      Führung bedeutet nicht, Macht über andere Menschen zu haben.
-      Führung bedeutet, Verantwortung für den Arbeitsbereich,
-      die Mitarbeiter, die Qualität und den Ablauf zu übernehmen.
-    </p>
-  </section>
+<h2>Trainingstag 1: Grundlagen der Führung</h2>
 
-  <section class="card important">
-    <h2>Was bedeutet Führung?</h2>
+<p>
+Willkommen zum ersten Training der Flaschenland Akademie.
+</p>
 
-    <p>
-      Ein Vorarbeiter sorgt dafür, dass Mitarbeiter wissen,
-      <strong>was zu tun ist, wer etwas übernimmt, wann es erledigt
-      sein muss und welche Qualität erwartet wird.</strong>
-    </p>
+<p>
+In diesem Training geht es nicht darum, möglichst viele Regeln
+auswendig zu lernen. Du sollst verstehen, <strong>was professionelle
+Führung im Arbeitsalltag bedeutet</strong> und wie du als Vorarbeiter
+richtig handelst.
+</p>
 
-    <p>
-      Ein guter Vorarbeiter führt durch Klarheit – nicht durch Angst,
-      Lautstärke oder Einschüchterung.
-    </p>
-  </section>
+<div class="info">
+<strong>Wichtig:</strong><br>
+Nimm dir Zeit für die Praxisfälle. Entscheide nicht danach,
+was am einfachsten ist, sondern danach, was für Mitarbeiter,
+Qualität und Ablauf professionell ist.
+</div>
 
-  <section class="card">
-    <h2>Die Rolle des Vorarbeiters</h2>
+<h3>Heute lernst du:</h3>
 
-    <h3>Der Vorarbeiter ist verantwortlich für:</h3>
+<ul>
+<li>Die Rolle des Vorarbeiters</li>
+<li>Verantwortung statt persönlicher Macht</li>
+<li>Klare Führung und klare Grenzen</li>
+<li>Mitarbeiter richtig einsetzen</li>
+<li>Kontrolle und Qualität</li>
+<li>Umgang mit Fehlern</li>
+<li>Zusammenarbeit zwischen Vorarbeitern</li>
+<li>Professionelles Verhalten in Konflikten</li>
+<li>Verantwortung für den gesamten Arbeitsablauf</li>
+</ul>
 
-    <ul>
-      <li>einen geordneten Arbeitsablauf</li>
-      <li>klare Arbeitsaufträge</li>
-      <li>die richtige Einteilung der Mitarbeiter</li>
-      <li>Qualität und Kontrolle</li>
-      <li>Unterstützung und Einarbeitung neuer Mitarbeiter</li>
-      <li>die Einhaltung von Regeln und Prozessen</li>
-      <li>eine saubere Kommunikation</li>
-      <li>Dokumentation wichtiger Abweichungen</li>
-      <li>rechtzeitige Eskalation von Problemen</li>
-    </ul>
-  </section>
+<button class="next" onclick="showSection('module1')">
+Training starten
+</button>
 
-  <section class="card">
-    <h2>10 Grundsätze professioneller Führung</h2>
+</section>
 
-    <div class="principle">
-      <span class="number">1.</span>
-      Führe durch Klarheit, nicht durch Einschüchterung.
-    </div>
 
-    <div class="principle">
-      <span class="number">2.</span>
-      Behandle jeden Mitarbeiter respektvoll.
-    </div>
+<!-- MODUL 1 -->
 
-    <div class="principle">
-      <span class="number">3.</span>
-      Erteile klare und verständliche Arbeitsanweisungen.
-    </div>
+<section class="card hidden" id="module1">
 
-    <div class="principle">
-      <span class="number">4.</span>
-      Kontrolliere und überprüfe – verlasse dich nicht auf Vermutungen.
-    </div>
+<span class="badge">Modul 1 · ca. 15 Min.</span>
 
-    <div class="principle">
-      <span class="number">5.</span>
-      Sprich Fehler sachlich und zeitnah an.
-    </div>
+<h2>1. Die Rolle des Vorarbeiters</h2>
 
-    <div class="principle">
-      <span class="number">6.</span>
-      Entwickle neue Mitarbeiter systematisch.
-    </div>
+<p>
+Mit der Übernahme der Vorarbeiterrolle verändert sich die
+Verantwortung.
+</p>
 
-    <div class="principle">
-      <span class="number">7.</span>
-      Delegiere Aufgaben und kontrolliere die Umsetzung.
-    </div>
+<p>
+Als Mitarbeiter konzentrierst du dich hauptsächlich auf deine
+eigene Aufgabe. Als Vorarbeiter musst du dagegen den gesamten
+Arbeitsbereich beobachten und steuern.
+</p>
 
-    <div class="principle">
-      <span class="number">8.</span>
-      Suche bei Problemen nach der Ursache statt zuerst nach einem Schuldigen.
-    </div>
+<h3>Du musst beispielsweise erkennen:</h3>
 
-    <div class="principle">
-      <span class="number">9.</span>
-      Trage Führungskonflikte nicht vor den Mitarbeitern aus.
-    </div>
+<ul>
+<li>Sind genügend Mitarbeiter vorhanden?</li>
+<li>Sind die richtigen Mitarbeiter richtig eingesetzt?</li>
+<li>Wer benötigt Unterstützung?</li>
+<li>Wer ist neu und muss weiter eingearbeitet werden?</li>
+<li>Werden Qualitätsstandards eingehalten?</li>
+<li>Gibt es Verzögerungen?</li>
+<li>Fehlt Material?</li>
+<li>Gibt es Konflikte?</li>
+<li>Muss ein Problem dokumentiert werden?</li>
+<li>Muss ein Problem eskaliert werden?</li>
+</ul>
 
-    <div class="principle">
-      <span class="number">10.</span>
-      Übernimm Verantwortung für deinen Bereich und eskaliere,
-      was du nicht selbst lösen kannst.
-    </div>
-  </section>
+<div class="info">
+<strong>Merksatz:</strong><br><br>
+Der Mitarbeiter erledigt seine Aufgabe.
+<br>
+Der Vorarbeiter sorgt dafür, dass der Bereich funktioniert.
+</div>
 
-  <section class="card">
-    <h2>🚫 Was Führung NICHT bedeutet</h2>
+<h3>Der Vorarbeiter ist kein „kleiner Chef“</h3>
 
-    <ul>
-      <li>Mitarbeiter anschreien</li>
-      <li>Mitarbeiter beleidigen oder bloßstellen</li>
-      <li>mit Angst oder Drohungen arbeiten</li>
-      <li>persönliche Machtkämpfe führen</li>
-      <li>Kollegen vor Mitarbeitern schlechtmachen</li>
-      <li>Regeln je nach Person unterschiedlich anwenden</li>
-    </ul>
+<p>
+Ein häufiger Fehler ist die Vorstellung:
+</p>
 
-    <p>
-      <strong>Respekt bedeutet nicht Schwäche.</strong>
-      Ein Vorarbeiter kann freundlich und gleichzeitig sehr klar
-      und konsequent sein.
-    </p>
-  </section>
+<div class="warning">
+„Jetzt bin ich Vorarbeiter. Jetzt habe ich das Sagen.“
+</div>
 
-  <section class="card">
-    <h2>📌 Praxisbeispiel</h2>
+<p>
+Das professionelle Verständnis lautet:
+</p>
 
-    <div class="scenario">
-      <p>
-        Ein Mitarbeiter arbeitet deutlich langsamer als erwartet.
-        Der Vorarbeiter ist verärgert.
-      </p>
+<div class="info">
+„Jetzt trage ich mehr Verantwortung.“
+</div>
 
-      <p><strong>Falsche Reaktion:</strong></p>
+<p>
+Autorität entsteht nicht dadurch, dass man andere Menschen
+einschüchtert. Autorität entsteht durch Fachlichkeit,
+Verlässlichkeit, Klarheit und konsequentes Handeln.
+</p>
 
-      <p>
-        „Was machst du eigentlich den ganzen Tag? Du bist viel zu langsam!“
-      </p>
+<div class="scenario">
+<strong>Praxisfrage</strong>
 
-      <p><strong>Professionelle Reaktion:</strong></p>
+<p>
+Ein neuer Vorarbeiter sagt:
+</p>
 
-      <p>
-        „Ich sehe, dass du bei diesem Auftrag deutlich länger brauchst.
-        Lass uns kurz schauen, woran es liegt. Hast du bei diesem
-        Arbeitsschritt noch Fragen oder fehlt dir etwas?“
-      </p>
+<p>
+„Jetzt bin ich Vorarbeiter. Die Mitarbeiter müssen machen,
+was ich sage.“
+</p>
 
-      <p>
-        Danach wird entschieden, welche Unterstützung oder Korrektur
-        notwendig ist.
-      </p>
-    </div>
-  </section>
+<button class="option" onclick="answer(this,false,'f1')">
+A) Richtig. Genau das bedeutet Führung.
+</button>
 
-  <section class="card">
-    <h2>🧠 Wissenstest</h2>
+<button class="option" onclick="answer(this,true,'f1')">
+B) Führung bedeutet Verantwortung, Klarheit, Kontrolle und Unterstützung.
+</button>
 
-    <div class="scenario">
-      <div class="question">
-        Frage 1: Was ist eine zentrale Aufgabe des Vorarbeiters?
-      </div>
+<button class="option" onclick="answer(this,false,'f1')">
+C) Ein Vorarbeiter darf keine Anweisungen geben.
+</button>
 
-      <button onclick="answer(1, false)">
-        A: Möglichst laut auftreten
-      </button>
+<div id="f1" class="feedback"></div>
+</div>
 
-      <button onclick="answer(1, true)">
-        B: Für klare Abläufe, Qualität und Mitarbeiterführung sorgen
-      </button>
+<button class="next" onclick="showSection('module2')">
+Weiter zu Modul 2
+</button>
 
-      <button onclick="answer(1, false)">
-        C: Alle Entscheidungen alleine treffen
-      </button>
+</section>
 
-      <div id="result1" class="result"></div>
-    </div>
 
-    <div class="scenario">
-      <div class="question">
-        Frage 2: Was ist bei einem Fehler richtig?
-      </div>
+<!-- MODUL 2 -->
 
-      <button onclick="answer(2, false)">
-        A: Den Mitarbeiter vor allen Kollegen bloßstellen
-      </button>
+<section class="card hidden" id="module2">
 
-      <button onclick="answer(2, true)">
-        B: Den Fehler sachlich ansprechen und die Ursache klären
-      </button>
+<span class="badge">Modul 2 · ca. 15 Min.</span>
 
-      <button onclick="answer(2, false)">
-        C: Den Fehler ignorieren
-      </button>
+<h2>2. Führung oder persönliche Macht?</h2>
 
-      <div id="result2" class="result"></div>
-    </div>
+<p>
+Ein Vorarbeiter besitzt innerhalb seines Verantwortungsbereichs
+bestimmte Befugnisse. Diese Befugnisse sind notwendig, damit ein
+Arbeitsbereich funktioniert.
+</p>
 
-    <div class="scenario">
-      <div class="question">
-        Frage 3: Bedeutet respektvolle Führung, dass man keine Grenzen setzt?
-      </div>
+<p>
+Sie dürfen aber niemals als persönliche Macht über andere Menschen
+verstanden werden.
+</p>
 
-      <button onclick="answer(3, false)">
-        A: Ja
-      </button>
+<h3>Machtorientiertes Verhalten</h3>
 
-      <button onclick="answer(3, true)">
-        B: Nein – Respekt und klare Grenzen gehören zusammen
-      </button>
+<ul>
+<li>anschreien</li>
+<li>einschüchtern</li>
+<li>beleidigen</li>
+<li>Mitarbeiter bloßstellen</li>
+<li>Widerspruch persönlich nehmen</li>
+<li>ständig den eigenen Status betonen</li>
+<li>Kollegen vor Mitarbeitern schlechtmachen</li>
+</ul>
 
-      <div id="result3" class="result"></div>
-    </div>
-  </section>
+<h3>Professionelle Führung</h3>
 
-  <section class="card finish">
-    <h2>✅ Trainingstag 1</h2>
+<ul>
+<li>klare Erwartungen formulieren</li>
+<li>ruhig und bestimmt kommunizieren</li>
+<li>zuhören</li>
+<li>Ergebnisse kontrollieren</li>
+<li>Fehler sachlich ansprechen</li>
+<li>Grenzen setzen</li>
+<li>fair bleiben</li>
+<li>Verantwortung übernehmen</li>
+</ul>
 
-    <p>
-      Du hast die Grundlagen der professionellen Führung kennengelernt.
-    </p>
+<div class="info">
+<strong>Grundsatz:</strong><br><br>
+Je schwieriger die Situation, desto wichtiger wird
+professionelle Selbstkontrolle.
+</div>
 
-    <p>
-      In Trainingstag 2 geht es um
-      <strong>Kommunikation, Tonfall, Körpersprache und klare Arbeitsanweisungen.</strong>
-    </p>
-  </section>
+<div class="scenario">
+
+<strong>Praxisfall</strong>
+
+<p>
+Ein Mitarbeiter widerspricht dir vor anderen Mitarbeitern.
+Du bist überzeugt, dass deine Entscheidung richtig ist.
+</p>
+
+<p>Wie reagierst du?</p>
+
+<button class="option" onclick="answer(this,false,'f2')">
+A) Ich werde lauter, damit der Mitarbeiter merkt, wer der Chef ist.
+</button>
+
+<button class="option" onclick="answer(this,true,'f2')">
+B) Ich bleibe ruhig, erkläre die Entscheidung und kläre offene Punkte sachlich.
+</button>
+
+<button class="option" onclick="answer(this,false,'f2')">
+C) Ich stelle den Mitarbeiter vor allen anderen bloß.
+</button>
+
+<div id="f2" class="feedback"></div>
+
+</div>
+
+<button class="next" onclick="showSection('module3')">
+Weiter zu Modul 3
+</button>
+
+</section>
+
+
+<!-- MODUL 3 -->
+
+<section class="card hidden" id="module3">
+
+<span class="badge">Modul 3 · ca. 20 Min.</span>
+
+<h2>3. Verantwortung im Arbeitsbereich</h2>
+
+<p>
+Ein Vorarbeiter muss seinen Bereich aktiv steuern.
+Dabei geht es nicht nur um die eigene Arbeitsleistung,
+sondern um das Ergebnis des gesamten Teams.
+</p>
+
+<h3>Personal</h3>
+
+<p>
+Du musst wissen, wer anwesend ist, wer welche Aufgabe beherrscht
+und wer Unterstützung benötigt.
+</p>
+
+<h3>Arbeitsverteilung</h3>
+
+<p>
+Aufträge werden nicht ausschließlich nach dem Prinzip
+„der Nächste bekommt den nächsten Auftrag“ verteilt.
+</p>
+
+<p>
+Berücksichtige:
+</p>
+
+<ul>
+<li>Erfahrung</li>
+<li>Ausbildungsstand</li>
+<li>Leistungsfähigkeit</li>
+<li>Qualität</li>
+<li>Auftragsgröße</li>
+<li>Auftragskomplexität</li>
+<li>aktuellen Arbeitsstand</li>
+</ul>
+
+<h3>Qualität</h3>
+
+<p>
+Geschwindigkeit allein ist keine Leistung.
+Ein Mitarbeiter kann sehr schnell arbeiten und gleichzeitig
+viele Fehler verursachen.
+</p>
+
+<div class="info">
+<strong>Professionelle Leistung bedeutet:</strong><br><br>
+richtige Arbeit + richtige Qualität + sinnvoller Einsatz
++ sicherer Prozess.
+</div>
+
+<div class="scenario">
+
+<strong>Praxisfall – neuer Mitarbeiter</strong>
+
+<p>
+Ein neuer Mitarbeiter ist deutlich langsamer als erfahrene Kollegen,
+macht aber kaum Fehler.
+</p>
+
+<p>Was ist die beste Vorgehensweise?</p>
+
+<button class="option" onclick="answer(this,false,'f3')">
+A) Sofort aus dem Bereich nehmen.
+</button>
+
+<button class="option" onclick="answer(this,false,'f3')">
+B) Den Mitarbeiter unter Druck setzen, damit er schneller wird.
+</button>
+
+<button class="option" onclick="answer(this,true,'f3')">
+C) Unterstützen, Entwicklung beobachten und die Schwierigkeit schrittweise erhöhen.
+</button>
+
+<button class="option" onclick="answer(this,false,'f3')">
+D) Den Mitarbeiter mit den besten Kollegen öffentlich vergleichen.
+</button>
+
+<div id="f3" class="feedback"></div>
+
+</div>
+
+<button class="next" onclick="showSection('module4')">
+Weiter zu Modul 4
+</button>
+
+</section>
+
+
+<!-- MODUL 4 -->
+
+<section class="card hidden" id="module4">
+
+<span class="badge">Modul 4 · ca. 15 Min.</span>
+
+<h2>4. Kontrolle und Qualität</h2>
+
+<p>
+Kontrolle ist keine persönliche Misstrauenserklärung.
+Kontrolle ist ein Bestandteil deiner Verantwortung.
+</p>
+
+<p>
+Wenn du für ein Ergebnis verantwortlich bist, musst du wissen,
+ob das Ergebnis tatsächlich erreicht wurde.
+</p>
+
+<h3>Beispiel Kommissionierung</h3>
+
+<ul>
+<li>richtiger Artikel</li>
+<li>richtige Menge</li>
+<li>richtiger Lagerplatz</li>
+<li>korrekter MDE-Prozess</li>
+<li>ordnungsgemäße Rückführung</li>
+<li>sauberer Abschluss</li>
+<li>korrekte Übergabe an das Quality Gate</li>
+</ul>
+
+<h3>Beispiel Verpackung</h3>
+
+<ul>
+<li>richtiges Verpackungsmaterial</li>
+<li>korrekte Verpackung</li>
+<li>keine unnötigen Beschädigungen</li>
+<li>richtige Zuordnung</li>
+<li>saubere Arbeitsplätze</li>
+<li>Erkennen wiederkehrender Fehler</li>
+</ul>
+
+<div class="scenario">
+
+<strong>Praxisfall</strong>
+
+<p>
+Mehrere Pakete zeigen denselben Verpackungsfehler.
+</p>
+
+<p>Was ist professionell?</p>
+
+<button class="option" onclick="answer(this,false,'f4')">
+A) Nur den letzten Mitarbeiter verantwortlich machen.
+</button>
+
+<button class="option" onclick="answer(this,true,'f4')">
+B) Fehler untersuchen, Ursache feststellen und Gegenmaßnahme einleiten.
+</button>
+
+<button class="option" onclick="answer(this,false,'f4')">
+C) Fehler ignorieren, solange die Menge stimmt.
+</button>
+
+<button class="option" onclick="answer(this,false,'f4')">
+D) Alle Mitarbeiter bestrafen.
+</button>
+
+<div id="f4" class="feedback"></div>
+
+</div>
+
+<button class="next" onclick="showSection('module5')">
+Weiter zu Modul 5
+</button>
+
+</section>
+
+
+<!-- MODUL 5 -->
+
+<section class="card hidden" id="module5">
+
+<span class="badge">Modul 5 · ca. 15 Min.</span>
+
+<h2>5. Umgang mit Fehlern</h2>
+
+<p>
+Bei einem Fehler sollte die erste Frage nicht lauten:
+</p>
+
+<div class="warning">
+„Wer war das?“
+</div>
+
+<p>
+Die bessere erste Frage lautet:
+</p>
+
+<div class="info">
+„Was ist passiert und warum ist es passiert?“
+</div>
+
+<h3>Professioneller Ablauf</h3>
+
+<ol>
+<li>Fehler feststellen</li>
+<li>Situation sichern</li>
+<li>Ursache klären</li>
+<li>Fehler korrigieren</li>
+<li>Mitarbeiter informieren</li>
+<li>Wiederholung verhindern</li>
+<li>bei Bedarf dokumentieren</li>
+</ol>
+
+<h3>Fehler oder bewusstes Fehlverhalten?</h3>
+
+<p>
+Ein unbeabsichtigter Fehler und bewusstes Ignorieren einer bekannten
+Regel sind unterschiedliche Situationen.
+</p>
+
+<p>
+Der Vorarbeiter muss deshalb zuerst feststellen,
+<strong>was tatsächlich passiert ist.</strong>
+</p>
+
+<div class="scenario">
+
+<strong>Praxisfall</strong>
+
+<p>
+Ein Mitarbeiter verwendet wiederholt den falschen Prozess,
+obwohl er bereits korrekt eingewiesen wurde.
+</p>
+
+<p>Was machst du?</p>
+
+<button class="option" onclick="answer(this,false,'f5')">
+A) Ignorieren.
+</button>
+
+<button class="option" onclick="answer(this,false,'f5')">
+B) Den Mitarbeiter vor allen anderen anschreien.
+</button>
+
+<button class="option" onclick="answer(this,true,'f5')">
+C) Verhalten sachlich ansprechen, Ursache klären und weitere Schritte nach den geltenden Regeln einleiten.
+</button>
+
+<div id="f5" class="feedback"></div>
+
+</div>
+
+<button class="next" onclick="showSection('module6')">
+Weiter zu Modul 6
+</button>
+
+</section>
+
+
+<!-- MODUL 6 -->
+
+<section class="card hidden" id="module6">
+
+<span class="badge">Modul 6 · ca. 15 Min.</span>
+
+<h2>6. Klare Grenzen und respektvolle Führung</h2>
+
+<p>
+Respekt bedeutet nicht, dass ein Vorarbeiter jedes Verhalten
+akzeptieren muss.
+</p>
+
+<p>
+Ein professioneller Vorarbeiter kann freundlich und gleichzeitig
+sehr klar sein.
+</p>
+
+<h3>Nicht akzeptabel sind beispielsweise:</h3>
+
+<ul>
+<li>Beleidigungen</li>
+<li>Drohungen</li>
+<li>persönliche Angriffe</li>
+<li>gezielte Demütigung</li>
+<li>ständiges Anschreien</li>
+<li>bewusstes Untergraben von Kollegen</li>
+</ul>
+
+<div class="info">
+<strong>Beispiel für eine klare Reaktion:</strong><br><br>
+„Stopp. So sprechen wir hier nicht miteinander.
+Wenn es ein Problem gibt, klären wir es sachlich.“
+</div>
+
+<div class="scenario">
+
+<strong>Praxisfall</strong>
+
+<p>
+Ein Mitarbeiter beleidigt einen Kollegen.
+</p>
+
+<p>Was ist deine erste professionelle Reaktion?</p>
+
+<button class="option" onclick="answer(this,false,'f6')">
+A) Ich beleidige ihn zurück.
+</button>
+
+<button class="option" onclick="answer(this,true,'f6')">
+B) Ich stoppe das Verhalten und kläre die Situation sachlich.
+</button>
+
+<button class="option" onclick="answer(this,false,'f6')">
+C) Ich ignoriere es.
+</button>
+
+<div id="f6" class="feedback"></div>
+
+</div>
+
+<button class="next" onclick="showSection('module7')">
+Weiter zu Modul 7
+</button>
+
+</section>
+
+
+<!-- MODUL 7 -->
+
+<section class="card hidden" id="module7">
+
+<span class="badge">Modul 7 · ca. 10 Min.</span>
+
+<h2>7. Zusammenarbeit der Vorarbeiter</h2>
+
+<p>
+Vorarbeiter können unterschiedliche Meinungen haben.
+Das ist normal und sogar wichtig.
+</p>
+
+<p>
+Nicht akzeptabel ist jedoch, wenn Führungskonflikte vor Mitarbeitern
+ausgetragen werden.
+</p>
+
+<h3>Warum ist das problematisch?</h3>
+
+<ul>
+<li>Mitarbeiter bekommen widersprüchliche Signale.</li>
+<li>Es entstehen Lagerbildungen.</li>
+<li>Autorität wird gegenseitig beschädigt.</li>
+<li>Der eigentliche Arbeitsprozess gerät in den Hintergrund.</li>
+</ul>
+
+<div class="info">
+<strong>Grundsatz:</strong><br><br>
+Führungskonflikte werden unter Führungskräften geklärt –
+nicht über die Mitarbeiter.
+</div>
+
+<div class="scenario">
+
+<strong>Praxisfall</strong>
+
+<p>
+Ein anderer Vorarbeiter kritisiert deine Entscheidung vor mehreren
+Mitarbeitern.
+</p>
+
+<button class="option" onclick="answer(this,false,'f7')">
+A) Ich kritisiere ihn sofort ebenfalls vor allen Mitarbeitern.
+</button>
+
+<button class="option" onclick="answer(this,true,'f7')">
+B) Ich halte die Situation sachlich und kläre die Meinungsverschiedenheit intern.
+</button>
+
+<button class="option" onclick="answer(this,false,'f7')">
+C) Ich versuche, die Mitarbeiter auf meine Seite zu ziehen.
+</button>
+
+<div id="f7" class="feedback"></div>
+
+</div>
+
+<button class="next" onclick="showSection('module8')">
+Weiter zu Modul 8
+</button>
+
+</section>
+
+
+<!-- MODUL 8 -->
+
+<section class="card hidden" id="module8">
+
+<span class="badge">Modul 8 · ca. 10 Min.</span>
+
+<h2>8. Denken in Prozessen</h2>
+
+<p>
+Ein Vorarbeiter darf nicht nur seinen eigenen Arbeitsplatz sehen.
+Die gesamte Prozesskette muss berücksichtigt werden.
+</p>
+
+<div class="info">
+<strong>Beispiel Warenfluss:</strong><br><br>
+Kommissionierung → Quality Gate → Verpackung → Versand →
+Wechselbrücke
+</div>
+
+<p>
+Ein Fehler an einer Stelle kann den nächsten Prozess erheblich
+beeinträchtigen.
+</p>
+
+<p>
+Deshalb lautet eine wichtige Führungsfrage:
+</p>
+
+<h3>„Was passiert mit meinem Fehler beim nächsten Prozessschritt?“</h3>
+
+<p>
+Professionelle Führung bedeutet deshalb auch,
+Schnittstellen zu verstehen und sauber zu übergeben.
+</p>
+
+<button class="next" onclick="showSection('exam')">
+Zum Abschlusstest
+</button>
+
+</section>
+
+
+<!-- TEST -->
+
+<section class="card hidden" id="exam">
+
+<span class="badge">Abschlusstest</span>
+
+<h2>Wissenstest Tag 1</h2>
+
+<p>
+Beantworte die folgenden Fragen.
+Zum Bestehen benötigst du mindestens <strong>80 %</strong>.
+</p>
+
+<div id="questions"></div>
+
+<button class="next finish" onclick="finishExam()">
+Test auswerten
+</button>
+
+<div id="examResult"></div>
+
+</section>
 
 </main>
 
-<script>
-  function answer(question, correct) {
-    const result = document.getElementById("result" + question);
 
-    if (correct) {
-      result.textContent = "✅ Richtig!";
-      result.style.color = "#2a9d8f";
-    } else {
-      result.textContent = "❌ Nicht richtig. Lies den Abschnitt noch einmal.";
-      result.style.color = "#c0392b";
-    }
-  }
+<script>
+
+let sections=[
+"start",
+"module1",
+"module2",
+"module3",
+"module4",
+"module5",
+"module6",
+"module7",
+"module8",
+"exam"
+];
+
+let current=0;
+
+function showSection(id){
+
+sections.forEach(s=>{
+document.getElementById(s).classList.add("hidden");
+});
+
+document.getElementById(id).classList.remove("hidden");
+
+current=sections.indexOf(id);
+
+let percent=(current/(sections.length-1))*100;
+
+document.getElementById("progressBar").style.width=percent+"%";
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+}
+
+function answer(button,correct,id){
+
+let parent=button.parentElement;
+let buttons=parent.querySelectorAll(".option");
+
+buttons.forEach(b=>{
+b.disabled=true;
+});
+
+if(correct){
+
+button.classList.add("correct");
+
+document.getElementById(id).textContent=
+"✅ Richtig. Deine Entscheidung entspricht einer professionellen Führungsweise.";
+
+}else{
+
+button.classList.add("wrong");
+
+document.getElementById(id).textContent=
+"❌ Nicht richtig. Denke an Verantwortung, Sachlichkeit, Qualität und klare Führung.";
+}
+
+}
+
+
+const questions=[
+
+{
+q:"Was ist die wichtigste Aufgabe eines Vorarbeiters?",
+a:[
+"Persönliche Macht ausüben",
+"Den gesamten Arbeitsbereich professionell steuern",
+"Alle Aufgaben selbst erledigen",
+"Möglichst streng auftreten"
+],
+correct:1
+},
+
+{
+q:"Was bedeutet professionelle Autorität?",
+a:[
+"Angst erzeugen",
+"Lauter sein als andere",
+"Durch Klarheit, Fachlichkeit und Konsequenz führen",
+"Immer Recht haben"
+],
+correct:2
+},
+
+{
+q:"Nach welchen Kriterien können Mitarbeiter eingesetzt werden?",
+a:[
+"Nur nach Reihenfolge",
+"Nur nach Sympathie",
+"Erfahrung, Qualifikation, Leistung, Qualität und Auftragsanforderung",
+"Immer dieselbe Person für schwierige Aufgaben"
+],
+correct:2
+},
+
+{
+q:"Was ist bei einem wiederkehrenden Fehler sinnvoll?",
+a:[
+"Schuldigen suchen",
+"Ursache analysieren und Gegenmaßnahme einleiten",
+"Fehler ignorieren",
+"Alle Mitarbeiter bestrafen"
+],
+correct:1
+},
+
+{
+q:"Was bedeutet Kontrolle?",
+a:[
+"Misstrauen",
+"Verantwortungsübernahme für das Ergebnis",
+"Überwachung aus persönlichem Interesse",
+"Strafe"
+],
+correct:1
+},
+
+{
+q:"Wie sollte ein Vorarbeiter auf eine Beleidigung reagieren?",
+a:[
+"Zurückbeleidigen",
+"Ignorieren",
+"Verhalten stoppen und sachlich klären",
+"Lauter werden"
+],
+correct:2
+},
+
+{
+q:"Wie werden Konflikte zwischen Vorarbeitern professionell behandelt?",
+a:[
+"Vor Mitarbeitern",
+"Über Mitarbeiter",
+"Intern und sachlich",
+"Durch öffentliche Kritik"
+],
+correct:2
+},
+
+{
+q:"Was gilt bei einem neuen Mitarbeiter?",
+a:[
+"Direkt schwierigste Aufgaben geben",
+"Entwicklung beobachten und Schwierigkeit schrittweise erhöhen",
+"Nie kontrollieren",
+"Nur nach Geschwindigkeit beurteilen"
+],
+correct:1
+},
+
+{
+q:"Was soll bei einem Fehler zuerst geklärt werden?",
+a:[
+"Wer schuld ist",
+"Was passiert ist und warum",
+"Wer bestraft wird",
+"Wer darüber informiert wird"
+],
+correct:1
+},
+
+{
+q:"Was bedeutet Verantwortung?",
+a:[
+"Nur für eigene Fehler einstehen",
+"Den eigenen Bereich aktiv steuern und Probleme rechtzeitig behandeln",
+"Alles selbst machen",
+"Keine Aufgaben delegieren"
+],
+correct:1
+},
+
+{
+q:"Was ist keine professionelle Führung?",
+a:[
+"Klare Anweisungen",
+"Sachliches Feedback",
+"Bloßstellung von Mitarbeitern",
+"Kontrolle"
+],
+correct:2
+},
+
+{
+q:"Was ist bei der Arbeitsverteilung wichtig?",
+a:[
+"Nur Schnelligkeit",
+"Nur Betriebszugehörigkeit",
+"Qualifikation, Erfahrung, Auftrag und aktueller Bedarf",
+"Persönliche Sympathie"
+],
+correct:2
+},
+
+{
+q:"Was sollte ein Vorarbeiter bei einem Prozessproblem tun?",
+a:[
+"Problem verstecken",
+"Ursache prüfen und gegebenenfalls eskalieren",
+"Immer selbstständig Prozesse ändern",
+"Nichts tun"
+],
+correct:1
+},
+
+{
+q:"Warum ist das Verhalten eines Vorarbeiters besonders wichtig?",
+a:[
+"Weil Mitarbeiter ihn als Vorbild beobachten",
+"Weil er nie Fehler machen darf",
+"Weil er immer Recht hat",
+"Weil Mitarbeiter keine eigene Meinung haben"
+],
+correct:0
+},
+
+{
+q:"Was bedeutet respektvolle Führung?",
+a:[
+"Alles erlauben",
+"Keine Grenzen setzen",
+"Respektvoll und gleichzeitig klar und konsequent sein",
+"Konflikte vermeiden"
+],
+correct:2
+}
+
+];
+
+
+let answers=new Array(questions.length).fill(null);
+
+function buildExam(){
+
+let container=document.getElementById("questions");
+
+questions.forEach((item,index)=>{
+
+let div=document.createElement("div");
+
+div.className="scenario";
+
+let html="<strong>Frage "+(index+1)+"</strong><p>"+item.q+"</p>";
+
+item.a.forEach((option,i)=>{
+
+html+=
+'<button class="option" onclick="selectExamAnswer('+index+','+i+',this)">'+
+option+
+'</button>';
+
+});
+
+html+='<div id="feedback'+index+'" class="feedback"></div>';
+
+div.innerHTML=html;
+
+container.appendChild(div);
+
+});
+
+}
+
+function selectExamAnswer(question,answer,button){
+
+answers[question]=answer;
+
+let parent=button.parentElement;
+
+parent.querySelectorAll(".option").forEach(b=>{
+b.classList.remove("correct");
+});
+
+button.classList.add("correct");
+
+}
+
+function finishExam(){
+
+let score=0;
+
+questions.forEach((q,i)=>{
+
+if(answers[i]===q.correct){
+score++;
+}
+
+});
+
+let percent=Math.round((score/questions.length)*100);
+
+let result=document.getElementById("examResult");
+
+if(percent>=80){
+
+result.innerHTML=
+'<div class="info score">✅ BESTANDEN<br>'+
+score+" von "+questions.length+
+" richtig ("+percent+" %)</div>";
+
+}else{
+
+result.innerHTML=
+'<div class="warning score">❌ NICHT BESTANDEN<br>'+
+score+" von "+questions.length+
+" richtig ("+percent+" %)<br><br>"+
+'<button class="next" onclick="location.reload()">Test wiederholen</button>'+
+'</div>';
+
+}
+
+window.scrollTo({
+top:document.body.scrollHeight,
+behavior:"smooth"
+});
+
+}
+
+buildExam();
+
 </script>
 
 </body>
