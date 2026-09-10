@@ -13,16 +13,15 @@
 
     body {
       margin: 0;
-      min-height: 100vh;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: #f4f6f8;
       color: #17202a;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     header {
       background: #14213d;
       color: white;
-      padding: 22px 20px;
+      padding: 22px 18px;
     }
 
     header h1 {
@@ -32,94 +31,139 @@
 
     header p {
       margin: 6px 0 0;
-      opacity: 0.8;
+      opacity: .8;
       font-size: 14px;
     }
 
     .container {
-      width: 100%;
       max-width: 900px;
-      margin: 0 auto;
+      margin: auto;
+      padding: 18px;
+    }
+
+    .box {
+      background: white;
+      border-radius: 18px;
       padding: 20px;
-    }
-
-    .welcome {
-      background: white;
-      border-radius: 18px;
-      padding: 22px;
       margin-bottom: 18px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      box-shadow: 0 4px 16px rgba(0,0,0,.06);
     }
 
-    .welcome h2 {
-      margin: 0 0 8px;
+    h2 {
+      margin-top: 0;
+      font-size: 21px;
     }
 
-    .welcome p {
-      margin: 0;
-      color: #65758b;
+    h3 {
+      margin-top: 0;
     }
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
+    label {
+      display: block;
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 6px;
     }
 
-    .card {
-      background: white;
-      border-radius: 18px;
-      padding: 22px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    input {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #d5dbe1;
+      border-radius: 10px;
+      font-size: 16px;
+      margin-bottom: 15px;
     }
 
-    .card-icon {
-      font-size: 30px;
-      margin-bottom: 12px;
-    }
-
-    .card h3 {
-      margin: 0 0 8px;
-      font-size: 18px;
-    }
-
-    .card p {
-      color: #65758b;
-      line-height: 1.5;
-      margin: 0;
-    }
-
+    button,
     .button {
-      display: inline-block;
-      margin-top: 16px;
-      padding: 11px 16px;
+      border: 0;
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
       background: #14213d;
       color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: 600;
-      border: none;
-      cursor: pointer;
-      font-size: 14px;
     }
 
-    .logout {
+    button:disabled {
+      opacity: .6;
+    }
+
+    .secondary {
+      background: #65758b;
+    }
+
+    .danger {
       background: #9b1c1c;
     }
 
-    .status {
-      margin-top: 18px;
-      padding: 14px;
-      border-radius: 10px;
+    .success {
       background: #def7ec;
       color: #03543f;
+      padding: 13px;
+      border-radius: 10px;
+      margin-bottom: 15px;
       display: none;
     }
 
-    @media (max-width: 650px) {
-      .cards {
-        grid-template-columns: 1fr;
-      }
+    .error {
+      background: #fde8e8;
+      color: #9b1c1c;
+      padding: 13px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      display: none;
+    }
+
+    .employee {
+      border: 1px solid #e0e4e8;
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+
+    .employee strong {
+      font-size: 17px;
+    }
+
+    .employee-info {
+      color: #65758b;
+      margin-top: 5px;
+      line-height: 1.5;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 5px 9px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-top: 8px;
+      background: #def7ec;
+      color: #03543f;
+    }
+
+    .badge.inactive {
+      background: #fde8e8;
+      color: #9b1c1c;
+    }
+
+    .actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .top-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .hidden {
+      display: none;
     }
   </style>
 </head>
@@ -133,92 +177,101 @@
 
 <div class="container">
 
-  <div class="welcome">
-    <h2>Willkommen im Admin-Bereich 👋</h2>
-    <p id="welcomeText">
+  <!-- ADMIN -->
+  <div class="box">
+    <h2>👋 Admin-Bereich</h2>
+
+    <p id="adminInfo">
       Anmeldung wird geprüft...
     </p>
 
-    <div id="status" class="status"></div>
+    <div class="top-actions">
+      <button id="logoutButton" class="danger">
+        Abmelden
+      </button>
 
-    <button
-      class="button logout"
-      id="logoutButton">
-      Abmelden
-    </button>
+      <button id="academyButton" class="secondary">
+        Akademie öffnen
+      </button>
+    </div>
   </div>
 
-  <div class="cards">
 
-    <div class="card">
-      <div class="card-icon">👥</div>
+  <!-- MITARBEITER ANLEGEN -->
+  <div class="box">
 
-      <h3>Mitarbeiter</h3>
+    <h2>👤 Mitarbeiter anlegen</h2>
 
-      <p>
-        Mitarbeiter verwalten, Benutzerkonten
-        anlegen und Status kontrollieren.
-      </p>
+    <div id="successMessage" class="success"></div>
+    <div id="errorMessage" class="error"></div>
+
+    <form id="employeeForm">
+
+      <label for="fullName">
+        Vollständiger Name
+      </label>
+
+      <input
+        id="fullName"
+        type="text"
+        placeholder="z. B. Max Mustermann"
+        required
+      >
+
+
+      <label for="username">
+        Benutzername
+      </label>
+
+      <input
+        id="username"
+        type="text"
+        placeholder="z. B. max.mustermann"
+        autocomplete="off"
+        required
+      >
+
+
+      <label for="password">
+        Startpasswort
+      </label>
+
+      <input
+        id="password"
+        type="password"
+        placeholder="Mindestens 8 Zeichen"
+        autocomplete="new-password"
+        minlength="8"
+        required
+      >
+
 
       <button
-        class="button"
-        onclick="alert('Mitarbeiterverwaltung bauen wir als Nächstes.')">
-        Mitarbeiter verwalten
+        id="createButton"
+        type="submit">
+        Mitarbeiter anlegen
       </button>
-    </div>
+
+    </form>
+
+  </div>
 
 
-    <div class="card">
-      <div class="card-icon">📊</div>
+  <!-- MITARBEITER LISTE -->
+  <div class="box">
 
-      <h3>Lernfortschritt</h3>
+    <h2>👥 Mitarbeiter</h2>
 
-      <p>
-        Übersicht über absolvierte Schulungstage,
-        Tests und Lernfortschritt.
-      </p>
+    <button
+      id="refreshButton"
+      class="secondary">
+      Liste aktualisieren
+    </button>
 
-      <button
-        class="button"
-        onclick="alert('Die Fortschrittsübersicht bauen wir als Nächstes.')">
-        Fortschritt
-      </button>
-    </div>
-
-
-    <div class="card">
-      <div class="card-icon">📝</div>
-
-      <h3>Testergebnisse</h3>
-
-      <p>
-        Testergebnisse und Prüfungsergebnisse
-        der Mitarbeiter anzeigen.
-      </p>
-
-      <button
-        class="button"
-        onclick="alert('Die Ergebnisübersicht bauen wir als Nächstes.')">
-        Ergebnisse
-      </button>
-    </div>
-
-
-    <div class="card">
-      <div class="card-icon">⚙️</div>
-
-      <h3>Schulung</h3>
-
-      <p>
-        Schulungstage, Inhalte und Prüfungen
-        später zentral verwalten.
-      </p>
-
-      <a
-        class="button"
-        href="index.html">
-        Akademie öffnen
-      </a>
+    <div
+      id="employeeList"
+      style="margin-top:18px;">
+      Wird geladen...
     </div>
 
   </div>
@@ -236,9 +289,11 @@
   const SUPABASE_KEY =
     "sb_publishable_7ISVnjWTi346wyI7H4xwLg_gqOwheFZ";
 
+
   const {
     createClient
   } = supabase;
+
 
   const supabaseClient =
     createClient(
@@ -247,14 +302,41 @@
     );
 
 
-  const welcomeText =
-    document.getElementById("welcomeText");
+  const adminInfo =
+    document.getElementById("adminInfo");
 
-  const status =
-    document.getElementById("status");
+  const employeeForm =
+    document.getElementById("employeeForm");
 
-  const logoutButton =
-    document.getElementById("logoutButton");
+  const createButton =
+    document.getElementById("createButton");
+
+  const employeeList =
+    document.getElementById("employeeList");
+
+  const successMessage =
+    document.getElementById("successMessage");
+
+  const errorMessage =
+    document.getElementById("errorMessage");
+
+
+  function showSuccess(text) {
+
+    successMessage.textContent = text;
+    successMessage.style.display = "block";
+    errorMessage.style.display = "none";
+
+  }
+
+
+  function showError(text) {
+
+    errorMessage.textContent = text;
+    errorMessage.style.display = "block";
+    successMessage.style.display = "none";
+
+  }
 
 
   async function checkAdmin() {
@@ -273,7 +355,8 @@
       window.location.href =
         "login.html";
 
-      return;
+      return false;
+
     }
 
 
@@ -302,11 +385,12 @@
       window.location.href =
         "login.html";
 
-      return;
+      return false;
+
     }
 
 
-    welcomeText.textContent =
+    adminInfo.textContent =
       "Angemeldet als " +
       profile.full_name +
       " (" +
@@ -314,28 +398,366 @@
       ")";
 
 
-    status.textContent =
-      "✓ Admin-Zugriff erfolgreich bestätigt.";
+    return true;
 
-    status.style.display =
-      "block";
   }
 
 
-  logoutButton.addEventListener(
-    "click",
-    async function() {
+  async function loadEmployees() {
 
-      await supabaseClient.auth.signOut();
+    employeeList.textContent =
+      "Mitarbeiter werden geladen...";
 
-      window.location.href =
-        "login.html";
+
+    const {
+      data,
+      error
+    } =
+      await supabaseClient
+        .from("profiles")
+        .select(
+          "id, username, full_name, role, active, created_at"
+        )
+        .eq("role", "employee")
+        .order(
+          "full_name",
+          {
+            ascending: true
+          }
+        );
+
+
+    if (error) {
+
+      console.error(error);
+
+      employeeList.textContent =
+        "Fehler beim Laden der Mitarbeiter.";
+
+      return;
+
+    }
+
+
+    if (!data || data.length === 0) {
+
+      employeeList.innerHTML =
+        "<p>Noch keine Mitarbeiter angelegt.</p>";
+
+      return;
+
+    }
+
+
+    employeeList.innerHTML = "";
+
+
+    data.forEach(function(employee) {
+
+      const div =
+        document.createElement("div");
+
+      div.className =
+        "employee";
+
+
+      const status =
+        employee.active
+          ? '<span class="badge">Aktiv</span>'
+          : '<span class="badge inactive">Deaktiviert</span>';
+
+
+      div.innerHTML =
+
+        "<strong>" +
+        escapeHtml(employee.full_name) +
+        "</strong>" +
+
+        '<div class="employee-info">' +
+        "Benutzername: <b>" +
+        escapeHtml(employee.username) +
+        "</b><br>" +
+        "Rolle: Mitarbeiter<br>" +
+        status +
+        "</div>" +
+
+        '<div class="actions">' +
+
+        '<button ' +
+        'class="' +
+        (employee.active
+          ? "danger"
+          : "secondary") +
+        '" ' +
+        'onclick="toggleEmployee(\'' +
+        employee.id +
+        '\',' +
+        employee.active +
+        ')">' +
+
+        (employee.active
+          ? "Deaktivieren"
+          : "Aktivieren") +
+
+        "</button>" +
+
+        "</div>";
+
+
+      employeeList.appendChild(div);
+
+    });
+
+  }
+
+
+  async function toggleEmployee(
+    id,
+    currentStatus
+  ) {
+
+    const newStatus =
+      !currentStatus;
+
+
+    const {
+      error
+    } =
+      await supabaseClient
+        .from("profiles")
+        .update({
+          active: newStatus
+        })
+        .eq("id", id);
+
+
+    if (error) {
+
+      console.error(error);
+
+      alert(
+        "Änderung konnte nicht gespeichert werden."
+      );
+
+      return;
+
+    }
+
+
+    await loadEmployees();
+
+  }
+
+
+  window.toggleEmployee =
+    toggleEmployee;
+
+
+  employeeForm.addEventListener(
+    "submit",
+    async function(event) {
+
+      event.preventDefault();
+
+
+      successMessage.style.display =
+        "none";
+
+      errorMessage.style.display =
+        "none";
+
+
+      const fullName =
+        document
+          .getElementById("fullName")
+          .value
+          .trim();
+
+
+      const username =
+        document
+          .getElementById("username")
+          .value
+          .trim()
+          .toLowerCase();
+
+
+      const password =
+        document
+          .getElementById("password")
+          .value;
+
+
+      if (
+        !fullName ||
+        !username ||
+        !password
+      ) {
+
+        showError(
+          "Bitte alle Felder ausfüllen."
+        );
+
+        return;
+
+      }
+
+
+      createButton.disabled =
+        true;
+
+      createButton.textContent =
+        "Wird angelegt...";
+
+
+      try {
+
+        const {
+          data,
+          error
+        } =
+          await supabaseClient.functions.invoke(
+            "create-employee",
+            {
+              body: {
+                username: username,
+                full_name: fullName,
+                password: password
+              }
+            }
+          );
+
+
+        if (error) {
+
+          console.error(error);
+
+          showError(
+            "Fehler beim Anlegen: " +
+            error.message
+          );
+
+          return;
+
+        }
+
+
+        if (!data || !data.success) {
+
+          showError(
+            data?.error ||
+            "Mitarbeiter konnte nicht angelegt werden."
+          );
+
+          return;
+
+        }
+
+
+        showSuccess(
+          "✓ Mitarbeiter " +
+          fullName +
+          " wurde erfolgreich angelegt."
+        );
+
+
+        employeeForm.reset();
+
+
+        await loadEmployees();
+
+      }
+
+      catch (error) {
+
+        console.error(error);
+
+        showError(
+          "Unerwarteter Fehler: " +
+          error.message
+        );
+
+      }
+
+      finally {
+
+        createButton.disabled =
+          false;
+
+        createButton.textContent =
+          "Mitarbeiter anlegen";
+
+      }
 
     }
   );
 
 
-  checkAdmin();
+  document
+    .getElementById("refreshButton")
+    .addEventListener(
+      "click",
+      loadEmployees
+    );
+
+
+  document
+    .getElementById("logoutButton")
+    .addEventListener(
+      "click",
+      async function() {
+
+        await supabaseClient.auth.signOut();
+
+        window.location.href =
+          "login.html";
+
+      }
+    );
+
+
+  document
+    .getElementById("academyButton")
+    .addEventListener(
+      "click",
+      function() {
+
+        window.location.href =
+          "index.html";
+
+      }
+    );
+
+
+  function escapeHtml(value) {
+
+    return String(value)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+
+  }
+
+
+  async function start() {
+
+    const isAdmin =
+      await checkAdmin();
+
+
+    if (!isAdmin) {
+      return;
+    }
+
+
+    await loadEmployees();
+
+  }
+
+
+  start();
 
 </script>
 
