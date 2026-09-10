@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Admin – Flaschenland Akademie</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f4f6f8;
+      color: #17202a;
+    }
+
+    header {
+      background: #14213d;
+      color: white;
+      padding: 22px 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    header p {
+      margin: 6px 0 0;
+      opacity: 0.8;
+      font-size: 14px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .welcome {
+      background: white;
+      border-radius: 18px;
+      padding: 22px;
+      margin-bottom: 18px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    }
+
+    .welcome h2 {
+      margin: 0 0 8px;
+    }
+
+    .welcome p {
+      margin: 0;
+      color: #65758b;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    }
+
+    .card-icon {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+
+    .card p {
+      color: #65758b;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 11px 16px;
+      background: #14213d;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .logout {
+      background: #9b1c1c;
+    }
+
+    .status {
+      margin-top: 18px;
+      padding: 14px;
+      border-radius: 10px;
+      background: #def7ec;
+      color: #03543f;
+      display: none;
+    }
+
+    @media (max-width: 650px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Flaschenland Akademie</h1>
+  <p>Administrationsbereich</p>
+</header>
+
+<div class="container">
+
+  <div class="welcome">
+    <h2>Willkommen im Admin-Bereich 👋</h2>
+    <p id="welcomeText">
+      Anmeldung wird geprüft...
+    </p>
+
+    <div id="status" class="status"></div>
+
+    <button
+      class="button logout"
+      id="logoutButton">
+      Abmelden
+    </button>
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="card-icon">👥</div>
+
+      <h3>Mitarbeiter</h3>
+
+      <p>
+        Mitarbeiter verwalten, Benutzerkonten
+        anlegen und Status kontrollieren.
+      </p>
+
+      <button
+        class="button"
+        onclick="alert('Mitarbeiterverwaltung bauen wir als Nächstes.')">
+        Mitarbeiter verwalten
+      </button>
+    </div>
+
+
+    <div class="card">
+      <div class="card-icon">📊</div>
+
+      <h3>Lernfortschritt</h3>
+
+      <p>
+        Übersicht über absolvierte Schulungstage,
+        Tests und Lernfortschritt.
+      </p>
+
+      <button
+        class="button"
+        onclick="alert('Die Fortschrittsübersicht bauen wir als Nächstes.')">
+        Fortschritt
+      </button>
+    </div>
+
+
+    <div class="card">
+      <div class="card-icon">📝</div>
+
+      <h3>Testergebnisse</h3>
+
+      <p>
+        Testergebnisse und Prüfungsergebnisse
+        der Mitarbeiter anzeigen.
+      </p>
+
+      <button
+        class="button"
+        onclick="alert('Die Ergebnisübersicht bauen wir als Nächstes.')">
+        Ergebnisse
+      </button>
+    </div>
+
+
+    <div class="card">
+      <div class="card-icon">⚙️</div>
+
+      <h3>Schulung</h3>
+
+      <p>
+        Schulungstage, Inhalte und Prüfungen
+        später zentral verwalten.
+      </p>
+
+      <a
+        class="button"
+        href="index.html">
+        Akademie öffnen
+      </a>
+    </div>
+
+  </div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+
+  const SUPABASE_URL =
+    "https://crfdjcacsflrtqcmswnb.supabase.co";
+
+  const SUPABASE_KEY =
+    "sb_publishable_7ISVnjWTi346wyI7H4xwLg_gqOwheFZ";
+
+  const {
+    createClient
+  } = supabase;
+
+  const supabaseClient =
+    createClient(
+      SUPABASE_URL,
+      SUPABASE_KEY
+    );
+
+
+  const welcomeText =
+    document.getElementById("welcomeText");
+
+  const status =
+    document.getElementById("status");
+
+  const logoutButton =
+    document.getElementById("logoutButton");
+
+
+  async function checkAdmin() {
+
+    const {
+      data: {
+        user
+      },
+      error
+    } =
+      await supabaseClient.auth.getUser();
+
+
+    if (error || !user) {
+
+      window.location.href =
+        "login.html";
+
+      return;
+    }
+
+
+    const {
+      data: profile,
+      error: profileError
+    } =
+      await supabaseClient
+        .from("profiles")
+        .select(
+          "id, username, full_name, role, active"
+        )
+        .eq("id", user.id)
+        .single();
+
+
+    if (
+      profileError ||
+      !profile ||
+      profile.role !== "admin" ||
+      !profile.active
+    ) {
+
+      await supabaseClient.auth.signOut();
+
+      window.location.href =
+        "login.html";
+
+      return;
+    }
+
+
+    welcomeText.textContent =
+      "Angemeldet als " +
+      profile.full_name +
+      " (" +
+      profile.username +
+      ")";
+
+
+    status.textContent =
+      "✓ Admin-Zugriff erfolgreich bestätigt.";
+
+    status.style.display =
+      "block";
+  }
+
+
+  logoutButton.addEventListener(
+    "click",
+    async function() {
+
+      await supabaseClient.auth.signOut();
+
+      window.location.href =
+        "login.html";
+
+    }
+  );
+
+
+  checkAdmin();
+
+</script>
+
+</body>
+</html>
