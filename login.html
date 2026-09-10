@@ -409,21 +409,21 @@
 
           if (error) {
 
-            console.error(error);
+  console.error("SUPABASE LOGIN FEHLER:", error);
 
-            showMessage(
-              "Benutzername oder Passwort ist falsch.",
-              "error"
-            );
+  showMessage(
+    "Supabase-Fehler: " + error.message,
+    "error"
+  );
 
-            loginButton.disabled = false;
+  loginButton.disabled = false;
 
-            loginButton.textContent =
-              "Anmelden";
+  loginButton.textContent =
+    "Anmelden";
 
-            return;
+  return;
 
-          }
+}
 
 
           if (!data.user) {
